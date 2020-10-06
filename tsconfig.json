@@ -1,6 +1,10 @@
 {
 	"compilerOptions": {
-		/* Visit https://aka.ms/tsconfig.json to read more about this file */
+		// do not compile anything, this file is just to configure type checking
+		// the compilation is configured in tsconfig.build.json
+		"noEmit": true,
+		"noEmitOnError": true,
+
 		/* Basic Options */
 		// "incremental": true,                   /* Enable incremental compilation */
 		"target": "es2018", /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
@@ -61,6 +65,7 @@
 	},
 	"include": [
 		"**/*.ts",
+		"**/*.tsx",
 	],
 	"exclude": [
 		"build/**",

@@ -1,0 +1,9 @@
+@import "../includes/variables.scss";
+@import "../includes/mixins.scss";
+
+header {
+	display: block;
+	width: 100%;
+	height: var(--row-height);
+	@include panel-background;
+}

@@ -1,0 +1,13 @@
+@import "../includes/variables.scss";
+@import "../includes/mixins.scss";
+
+aside {
+	display: block;
+	grid-column: 1 / span 3;
+	width: 100%;
+	min-height: 100px;
+	@include panel-background;
+
+	padding: var(--spacing-small);
+	padding-top: calc(var(--row-height) + var(--row-gutter));
+}

@@ -1,0 +1,5 @@
+@mixin panel-background() {
+	background: var(--color-bg_alpha);
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+}

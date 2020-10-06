@@ -1,0 +1,41 @@
+@import "./includes/variables.scss";
+
+@font-face {
+	font-family: "Saira Condensed";
+	src: url("../assets/SairaCondensed-Light.ttf") format("truetype");
+}
+
+* {
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	min-width: 960px;
+}
+
+body {
+	background: var(--color-bg) url(../assets/background.jpg) top center no-repeat;
+	background-size: cover;
+
+	font-family: "Saira Condensed";
+	color: white;
+	font-size: 16px;
+}
+
+.content-wrapper {
+	margin: 0 auto;
+	margin-top: calc(-1 * var(--row-height));
+	width: 940px;
+	height: 100%;
+
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	column-gap: 20px;
+}
+
+@import "./components/header.scss";
+@import "./components/sidebar.scss";
+@import "./components/clock.scss";

@@ -1,0 +1,18 @@
+@import "../includes/variables.scss";
+@import "../includes/mixins.scss";
+
+.clock {
+	text-align: center;
+	& > * {
+		display: block;
+	}
+	& > .time {
+		font-size: 6rem;
+		line-height: 1;
+	}
+    background: linear-gradient(to right,
+        var(--color-text) calc(var(--seconds) / 60 * 100%),
+        rgba(var(--light-gray), 0.3) calc(var(--seconds) / 60 * 1%),
+    ) bottom center no-repeat;
+    background-size: 80% 1px;
+}
