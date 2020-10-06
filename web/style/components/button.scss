@@ -48,4 +48,26 @@ button.icon-button {
 	// Variants:
 	background-color: var(--color-bg_alpha_stacked);
 	color: white;
+
+	&.active {
+		text-shadow: 0 0 5px rgba(255, 255, 255, 0.85);
+		background-color: var(--color-green_alpha);
+		& .icon {
+			color: white;
+			filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.85));
+		}
+	}
+
+	&.inactive {
+		background-color: var(--color-bg_alpha);
+		color: var(--color-text-alt_inactive);
+		& .icon {
+			color: var(--color-text-dark_inactive);
+		}
+	}
+
+	&.error {
+		background-color: var(--color-red_alpha_stacked);
+		color: var(--color-red_alpha);
+	}
 }

@@ -1,0 +1,33 @@
+@import "../includes/variables.scss";
+@import "../includes/mixins.scss";
+
+.dialog {
+	width: 100%;
+	@include panel-background();
+
+	& > .dialog-title {
+		@include section-header-background();
+		padding-left: var(--spacing);
+
+		display: flex;
+		flex-flow: row nowrap;
+
+		& > .title {
+			flex: 1 0 auto;
+			font-size: var(--font-size-large);
+			line-height: 1;
+			align-self: center;
+
+		}
+		& > .close-button {
+			flex: 0 0 auto;
+			background: transparent;
+			color: white
+		}
+	}
+
+	& > .dialog-content {
+		min-height: 200px;
+		padding: var(--spacing);
+	}
+}

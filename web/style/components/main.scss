@@ -1,0 +1,10 @@
+@import "../includes/variables.scss";
+@import "../includes/mixins.scss";
+
+main {
+	display: block;
+	grid-column: content-start / end;
+	width: 100%;
+
+	margin: var(--row-gutter) 0;
+}

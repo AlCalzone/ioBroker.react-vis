@@ -32,12 +32,13 @@ body {
 	height: 100%;
 
 	display: grid;
-	grid-template-columns: repeat(12, 1fr);
+	grid-template-columns: [start] repeat(3, 1fr) [content-start] repeat(9, 1fr) [end];
 	column-gap: 20px;
 }
 
 @import "./components/button.scss";
-@import "./components/header.scss";
+@import "./components/main.scss";
 @import "./components/sidebar.scss";
 @import "./components/clock.scss";
 @import "./components/navigation.scss";
+@import "./components/dialog.scss";

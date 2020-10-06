@@ -12,10 +12,21 @@
 	--color-bg_alpha: rgba(var(--prussian-blue), 0.3);
 	--color-bg_alpha_stacked: rgba(var(--prussian-blue), 0.65);
 
-	--color-bg-alt: rgba(--feldgrau, 1);
+	--color-bg-alt: rgba(var(--feldgrau), 1);
+
+	--color-green: rgba(var(--android-green), 1);
+	--color-green_alpha: rgba(var(--android-green), 0.5);
+
+	--color-red: rgba(var(--persian-plum), 1);
+	--color-red_alpha: rgba(var(--persian-plum), 0.5);
+	--color-red_alpha_stacked: rgba(var(--persian-plum), 0.15);
 
 	--color-text: white;
+	--color-text-dark: rgba(var(--prussian-blue), 1);
+	--color-text-dark_inactive: rgba(var(--prussian-blue), 0.75);
+
 	--color-text-alt: rgba(var(--light-gray), 1);
+	--color-text-alt_inactive: rgba(var(--light-gray), 0.5);
 
 	--spacing: 10px;
 	--row-height: 40px;
