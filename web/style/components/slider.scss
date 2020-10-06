@@ -1,0 +1,47 @@
+@import "../includes/variables.scss";
+@import "../includes/mixins.scss";
+
+.slider {
+	display: inline-flex;
+	flex-flow: column nowrap;
+	justify-content: flex-end;
+	width: 60px;
+	margin-top: var(--spacing);
+	margin-right: var(--spacing);
+
+	& > label {
+		flex: 0 0 auto;
+		text-align: center;
+		word-wrap: break-word;
+		line-height: 1;
+		margin-bottom: 0.5em;
+	}
+	& > button {
+		flex: 0 1 40px;
+		background-color: var(--color-bg_alpha_stacked);
+		color: white;
+	}
+	& > .track {
+		--height: 120px;
+		flex: 0 0 var(--height);
+		height: var(--height);
+		background: linear-gradient(
+			to top,
+			var(--color-green_alpha) calc(var(--percentage) * 1%),
+			var(--color-bg-alt_alpha) calc(var(--percentage) * 1%)
+		);
+		// Text mittig auf grün ausrichten
+		padding-top: calc((1 - var(--percentage) / 100) * var(--height));
+		line-height: calc(var(--percentage) / 100 * var(--height));
+
+		text-align: center;
+		font-size: var(--font-size-medium);
+
+		cursor: ns-resize;
+	}
+}
+
+.slider-list {
+	display: flex;
+	flex-flow: row wrap;
+}

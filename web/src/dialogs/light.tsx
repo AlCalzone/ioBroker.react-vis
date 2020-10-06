@@ -2,6 +2,7 @@ import * as React from "react";
 import { Dialog } from "../components/dialog";
 import { IconButton } from "../components/iconButton";
 import { Adjustments, Vacuum } from "../components/icons";
+import { Slider } from "../components/slider";
 
 export interface LightDialogProps {
 	onClose?: () => void;
@@ -34,36 +35,13 @@ export const LightDialog: React.FC<LightDialogProps> = (props) => {
 					label="Licht &amp; Rollos"
 					icon={<Adjustments size={40} />}
 				/>
-				<IconButton
-					label="Staubsauger"
-					icon={<Vacuum size={40} />}
-					variant="active"
-				/>
-				<IconButton
-					label="Licht &amp; Rollos"
-					icon={<Adjustments size={40} />}
-				/>
-				<IconButton
-					label="Staubsauger"
-					icon={<Vacuum size={40} />}
-					variant="active"
-				/>
-				<IconButton
-					label="Licht &amp; Rollos"
-					icon={<Adjustments size={40} />}
-				/>
-				<IconButton
-					label="Staubsauger"
-					icon={<Vacuum size={40} />}
-					variant="active"
-				/>
 			</div>
 			<h2>Rollos</h2>
-			<ul>
-				<li>tüdelü</li>
-				<li>tütü</li>
-				<li>bla</li>
-			</ul>
+			<div className="slider-list">
+				<Slider label="alle" value={50} />
+				<Slider label="Wohnzimmer" value={75} />
+				<Slider label="Küche" value={12} />
+			</div>
 		</Dialog>
 	);
 };
