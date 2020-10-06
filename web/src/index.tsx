@@ -8,7 +8,7 @@ import { LightDialog } from "./dialogs/light";
 export type Dialogs = "light" | "vacuum";
 
 const Root: React.FC = () => {
-	const [currentDialog, setCurrentDialog] = React.useState<Dialogs>();
+	const [currentDialog, setCurrentDialog] = React.useState<Dialogs>("light");
 	const clearCurrentDialog = setCurrentDialog.bind(undefined, undefined);
 
 	return (

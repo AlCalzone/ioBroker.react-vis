@@ -12,9 +12,10 @@
 		display: flex;
 		flex-flow: row nowrap;
 
-		& > .title {
+		& > h1 {
 			flex: 1 0 auto;
 			font-size: var(--font-size-large);
+			margin: 0;
 			line-height: 1;
 			align-self: center;
 

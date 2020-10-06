@@ -10,7 +10,7 @@ export const Dialog: React.FC<DialogProps> = (props) => {
 	return (
 		<div className="dialog">
 			<div className="dialog-title">
-				<span className="title">{props.title}</span>
+				<h1>{props.title}</h1>
 				<button
 					className="close-button"
 					onClick={() => props.onClose?.()}

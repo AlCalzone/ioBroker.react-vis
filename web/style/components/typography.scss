@@ -1,0 +1,25 @@
+@import "../includes/variables.scss";
+@import "../includes/mixins.scss";
+
+body {
+	font-family: "Saira Condensed";
+	color: white;
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	display: block;
+	font-weight: normal;
+	margin-bottom: 0;
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+h1 {
+	font-size: var(--font-size-large);
+}
+
+h2 {
+	font-size: var(--font-size-medium);
+}

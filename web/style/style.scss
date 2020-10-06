@@ -17,12 +17,9 @@ body {
 }
 
 body {
-	background: var(--color-bg) url(../assets/background.jpg) top center no-repeat;
+	background: var(--color-bg) url(../assets/background.jpg) top center
+		no-repeat;
 	background-size: cover;
-
-	font-family: "Saira Condensed";
-	color: white;
-	font-size: 16px;
 }
 
 .content-wrapper {
@@ -36,6 +33,7 @@ body {
 	column-gap: 20px;
 }
 
+@import "./components/typography.scss";
 @import "./components/button.scss";
 @import "./components/main.scss";
 @import "./components/sidebar.scss";

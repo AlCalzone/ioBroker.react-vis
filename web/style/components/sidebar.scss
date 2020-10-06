@@ -11,9 +11,6 @@ aside {
 	// padding-top: calc(var(--row-height) + var(--row-gutter));
 
 	& > h2 {
-		display: block;
-		font-weight: normal;
-		font-size: var(--font-size-large);
 		@include section-header-background();
 		margin: 0 calc(-1 * var(--spacing)) var(--spacing);
 		padding: 0 var(--spacing);
