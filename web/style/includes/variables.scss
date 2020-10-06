@@ -10,15 +10,16 @@
 		
 	--color-bg: rgba(var(--prussian-blue), 1);
 	--color-bg_alpha: rgba(var(--prussian-blue), 0.3);
+	--color-bg_alpha_stacked: rgba(var(--prussian-blue), 0.65);
 
 	--color-bg-alt: rgba(--feldgrau, 1);
 
 	--color-text: white;
 	--color-text-alt: rgba(var(--light-gray), 1);
 
-	--spacing-small: 10px;
+	--spacing: 10px;
 	--row-height: 40px;
-	--row-gutter: calc(2 * var(--spacing-small));
+	--row-gutter: calc(2 * var(--spacing));
 
 	--font-size-normal: 1rem;
 	--font-size-medium: 1.27rem;

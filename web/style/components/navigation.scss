@@ -1,0 +1,14 @@
+@import "../includes/variables.scss";
+
+nav {
+	display: flex;
+	flex-wrap: wrap;
+	margin: calc(-1 * var(--spacing));
+}
+
+nav > .icon-button {
+	flex: 0 0 calc(50% - 2*var(--spacing));
+	margin: var(--spacing);
+	// WTF?
+	padding-bottom: calc(50% - 3*var(--spacing));
+}

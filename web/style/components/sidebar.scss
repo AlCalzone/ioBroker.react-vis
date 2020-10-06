@@ -5,9 +5,16 @@ aside {
 	display: block;
 	grid-column: 1 / span 3;
 	width: 100%;
-	min-height: 100px;
 	@include panel-background;
 
-	padding: var(--spacing-small);
-	padding-top: calc(var(--row-height) + var(--row-gutter));
+	padding: var(--row-gutter) var(--spacing);
+	// padding-top: calc(var(--row-height) + var(--row-gutter));
+
+	& > h2 {
+		display: block;
+		font-weight: normal;
+		@include section-header-background();
+		margin: 0 calc(-1 * var(--spacing)) var(--spacing);
+		padding: 0 var(--spacing);
+	}
 }

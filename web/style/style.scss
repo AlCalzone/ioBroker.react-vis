@@ -27,7 +27,7 @@ body {
 
 .content-wrapper {
 	margin: 0 auto;
-	margin-top: calc(-1 * var(--row-height));
+	// margin-top: calc(-1 * var(--row-height));
 	width: 940px;
 	height: 100%;
 
@@ -36,6 +36,8 @@ body {
 	column-gap: 20px;
 }
 
+@import "./components/button.scss";
 @import "./components/header.scss";
 @import "./components/sidebar.scss";
 @import "./components/clock.scss";
+@import "./components/navigation.scss";
