@@ -8,6 +8,11 @@
   },
   "homepage": "https://github.com/AlCalzone/ioBroker.react-vis",
   "private": true,
+  "files": [
+    "web/build",
+    "LICENSE",
+    "io-package.json"
+  ],
   "license": "UNLICENSED",
   "keywords": [
     "ioBroker",
@@ -52,10 +57,10 @@
   },
   "scripts": {
     "prebuild": "rimraf ./build",
-    "build:parcel": "parcel build web/src/index.tsx -d web/build",
+    "build:parcel": "parcel build www/src/index.tsx -d www/build",
     "build:ts": "tsc -p tsconfig.build.json",
     "build": "npm run build:ts && npm run build:parcel",
-    "watch:parcel": "parcel web/index.html -d web/build --hmr-port 1235",
+    "watch:parcel": "parcel www/index.html -d www/build --hmr-port 1235",
     "watch:ts": "tsc -p tsconfig.build.json --watch",
     "watch": "npm run watch:ts",
     "lint": "eslint --ext .ts src"
