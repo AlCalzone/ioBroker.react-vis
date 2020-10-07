@@ -1,18 +1,17 @@
 import * as React from "react";
 
-export interface IconButtonProps {
+export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	icon: React.ReactNode;
 	label: string;
-	onClick?: React.ButtonHTMLAttributes<HTMLButtonElement>["onClick"];
 	variant?: "inactive" | "active" | "error";
 }
 
-export const IconButton: React.FC<IconButtonProps> = (props) => {
+export const IconButton: React.FC<IconButtonProps> = ({ icon, label, variant, ...props }) => {
 	return (
-		<button className={`icon-button ${props.variant ?? ""}`} onClick={props.onClick}>
+		<button className={`icon-button ${variant ?? ""}`} {...props}>
 			<div className="child">
-				<span className="icon">{props.icon}</span>
-				<span className="label">{props.label}</span>
+				<span className="icon">{icon}</span>
+				<span className="label">{label}</span>
 			</div>
 		</button>
 	);

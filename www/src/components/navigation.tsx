@@ -21,6 +21,7 @@ export const Navigation: React.FC<NavigationProps> = (props) => {
 					label="Staubsauger"
 					icon={<Vacuum size={40} />}
 					onClick={() => props.onSelectDialog("vacuum")}
+					disabled={true}
 				/>
 			</nav>
 		</>

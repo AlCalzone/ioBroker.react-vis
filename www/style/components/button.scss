@@ -15,7 +15,7 @@ button {
 	-moz-appearance: none;
 }
 
-button:hover:not(.disabled) {
+button:hover:not(.disabled):not(:disabled) {
 	filter: brightness(110%) saturate(140%);
 }
 
@@ -63,12 +63,16 @@ button:hover:not(.disabled) {
 		}
 	}
 
-	&.inactive {
+	&.inactive,
+	&:disabled {
 		background-color: var(--color-bg_alpha);
 		color: var(--color-text-alt_inactive);
 		& .icon {
 			color: var(--color-text-dark_inactive);
 		}
+	}
+	&:disabled {
+		cursor: default;
 	}
 
 	&.error {
