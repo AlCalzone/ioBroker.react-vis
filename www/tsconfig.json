@@ -6,10 +6,16 @@
 		"sourceMap": true,
 		"sourceRoot": "./src",
 		"noImplicitAny": false,
-		"lib": ["es2018", "DOM"]
+		"lib": [
+			"es2018",
+			"DOM"
+		]
 	},
 	"include": [
-		"./**/*.ts*",
+		"./**/*.ts",
+		"./**/*.tsx",
 	],
-	"exclude": ["./**/*.test.ts*"]
+	"exclude": [
+		"./**/*.test.ts*"
+	]
 }

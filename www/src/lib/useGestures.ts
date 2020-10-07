@@ -1,5 +1,5 @@
 // Based on https://github.com/giladl82/use-gestures, converted to TypeScript
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export interface PanSwipeEvent {
 	preventDefault: () => void;
@@ -43,20 +43,14 @@ const debounce = (func, wait) => {
 	};
 };
 
-const getDistance = (
-	p1: { x: number; y: number },
-	p2: { x: number; y: number },
-) => {
+const getDistance = (p1: Pointer, p2: Pointer) => {
 	const powX = Math.pow(p1.x - p2.x, 2);
 	const powY = Math.pow(p1.y - p2.y, 2);
 
 	return Math.sqrt(powX + powY);
 };
 
-const getAngleDeg = (
-	p1: { x: number; y: number },
-	p2: { x: number; y: number },
-) => {
+const getAngleDeg = (p1: Pointer, p2: Pointer) => {
 	return (Math.atan2(p1.y - p2.y, p1.x - p2.x) * 180) / Math.PI;
 };
 
@@ -92,11 +86,7 @@ export default function useGestures<T extends HTMLElement>(
 	useEffect(() => {
 		const element = ref.current;
 
-		const getCurrentTouches = (
-			originalEvent,
-			touches,
-			prevTouch,
-		): PinchEvent | PanSwipeEvent => {
+		const getCurrentTouches = (originalEvent, touches, prevTouch): PinchEvent | PanSwipeEvent => {
 			const firstTouch = initialTouches.current;
 
 			if (touches.length === 2) {
@@ -123,30 +113,20 @@ export default function useGestures<T extends HTMLElement>(
 					deltaX: prevTouch ? pointer.x - prevTouch.x : 0,
 					deltaY: prevTouch ? pointer.y - prevTouch.y : 0,
 					delta: prevTouch ? getDistance(pointer, prevTouch) : 0,
-					distance: firstTouch
-						? getDistance(pointer, firstTouch as PanSwipeEvent)
-						: 0,
+					distance: firstTouch ? getDistance(pointer, firstTouch as PanSwipeEvent) : 0,
 					angleDeg: prevTouch ? getAngleDeg(pointer, prevTouch) : 0,
 				};
 			}
 		};
 
 		const callHandler = (eventName, event) => {
-			if (
-				eventName &&
-				handlers[eventName] &&
-				typeof handlers[eventName] === "function"
-			) {
+			if (eventName && handlers[eventName] && typeof handlers[eventName] === "function") {
 				handlers[eventName](event);
 			}
 		};
 
 		const handleTouchStart = (event) => {
-			const currentTouches = getCurrentTouches(
-				event,
-				event.touches,
-				null,
-			);
+			const currentTouches = getCurrentTouches(event, event.touches, null);
 			setTouches(currentTouches);
 			initialTouches.current = currentTouches;
 
@@ -157,21 +137,17 @@ export default function useGestures<T extends HTMLElement>(
 			}
 		};
 
-		const handleMouseDown = (event) => {
-			const currentTouches = getCurrentTouches(event, [event], null);
-			setTouches(currentTouches);
-			initialTouches.current = currentTouches;
+		// const handleMouseDown = (event) => {
+		// 	const currentTouches = getCurrentTouches(event, [event], null);
+		// 	setTouches(currentTouches);
+		// 	initialTouches.current = currentTouches;
 
-			callHandler("onPanStart", currentTouches);
-		};
+		// 	callHandler("onPanStart", currentTouches);
+		// };
 
 		const handleTouchMove = (event) => {
 			event.preventDefault();
-			const currentTouches = getCurrentTouches(
-				event,
-				event.touches,
-				touches,
-			);
+			const currentTouches = getCurrentTouches(event, event.touches, touches);
 			setTouches(currentTouches);
 
 			if (event.touches.length === 2) {
@@ -217,56 +193,52 @@ export default function useGestures<T extends HTMLElement>(
 			}
 		};
 
-		const handleMouseMove = (event) => {
-			event.preventDefault();
-			const currentTouches = getCurrentTouches(event, [event], touches);
-			setTouches(currentTouches);
+		// const handleMouseMove = (event) => {
+		// 	event.preventDefault();
+		// 	const currentTouches = getCurrentTouches(event, [event], touches);
+		// 	setTouches(currentTouches);
 
-			callHandler("onPanMove", currentTouches);
+		// 	callHandler("onPanMove", currentTouches);
 
-			let eventName, theGesture;
-			if (!("deltaX" in currentTouches)) return;
+		// 	let eventName, theGesture;
+		// 	if (!("deltaX" in currentTouches)) return;
 
-			if (
-				Math.abs(currentTouches.deltaX) >= options.minDelta &&
-				Math.abs(currentTouches.deltaY) < options.minDelta
-			) {
-				if (currentTouches.deltaX < 0) {
-					eventName = "onSwipeLeft";
-					theGesture = "swipeLeft";
-				} else {
-					eventName = "onSwipeRight";
-					theGesture = "swipeRight";
-				}
-			} else if (
-				Math.abs(currentTouches.deltaX) < options.minDelta &&
-				Math.abs(currentTouches.deltaY) >= options.minDelta
-			) {
-				if (currentTouches.deltaY < 0) {
-					eventName = "onSwipeUp";
-					theGesture = "swipeUp";
-				} else {
-					eventName = "onSwipeDown";
-					theGesture = "swipeDown";
-				}
-			} else {
-				theGesture = "";
-			}
+		// 	if (
+		// 		Math.abs(currentTouches.deltaX) >= options.minDelta &&
+		// 		Math.abs(currentTouches.deltaY) < options.minDelta
+		// 	) {
+		// 		if (currentTouches.deltaX < 0) {
+		// 			eventName = "onSwipeLeft";
+		// 			theGesture = "swipeLeft";
+		// 		} else {
+		// 			eventName = "onSwipeRight";
+		// 			theGesture = "swipeRight";
+		// 		}
+		// 	} else if (
+		// 		Math.abs(currentTouches.deltaX) < options.minDelta &&
+		// 		Math.abs(currentTouches.deltaY) >= options.minDelta
+		// 	) {
+		// 		if (currentTouches.deltaY < 0) {
+		// 			eventName = "onSwipeUp";
+		// 			theGesture = "swipeUp";
+		// 		} else {
+		// 			eventName = "onSwipeDown";
+		// 			theGesture = "swipeDown";
+		// 		}
+		// 	} else {
+		// 		theGesture = "";
+		// 	}
 
-			if (eventName) {
-				debounce((eventName, touches, theGesture) => {
-					callHandler(eventName, touches);
-					setGesture(theGesture);
-				}, 100)(eventName, touches, theGesture);
-			}
-		};
+		// 	if (eventName) {
+		// 		debounce((eventName, touches, theGesture) => {
+		// 			callHandler(eventName, touches);
+		// 			setGesture(theGesture);
+		// 		}, 100)(eventName, touches, theGesture);
+		// 	}
+		// };
 
 		const handleTouchEnd = (event) => {
-			const currentTouches = getCurrentTouches(
-				event,
-				event.changedTouches,
-				null,
-			);
+			const currentTouches = getCurrentTouches(event, event.changedTouches, null);
 			// @ts-expect-error
 			if (touches?.pointers?.length === 2) {
 				callHandler("onPinchEnd", currentTouches);
@@ -275,28 +247,18 @@ export default function useGestures<T extends HTMLElement>(
 			}
 
 			if (gesture) {
-				callHandler(
-					`on${
-						gesture.charAt(0).toUpperCase() + gesture.slice(1)
-					}End`,
-					currentTouches,
-				);
+				callHandler(`on${gesture.charAt(0).toUpperCase() + gesture.slice(1)}End`, currentTouches);
 			}
 		};
 
-		const handleMouseUp = (event) => {
-			const currentTouches = getCurrentTouches(event, [event], null);
-			callHandler("onPanEnd", currentTouches);
+		// const handleMouseUp = (event) => {
+		// 	const currentTouches = getCurrentTouches(event, [event], null);
+		// 	callHandler("onPanEnd", currentTouches);
 
-			if (gesture) {
-				callHandler(
-					`on${
-						gesture.charAt(0).toUpperCase() + gesture.slice(1)
-					}End`,
-					currentTouches,
-				);
-			}
-		};
+		// 	if (gesture) {
+		// 		callHandler(`on${gesture.charAt(0).toUpperCase() + gesture.slice(1)}End`, currentTouches);
+		// 	}
+		// };
 
 		const preventTouchScrolling = (event) => {
 			event.preventDefault();

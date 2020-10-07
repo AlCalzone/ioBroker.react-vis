@@ -1,7 +1,22 @@
 <html>
 	<head>
+		<title>Huhu</title>
 		<!-- Load our own files -->
 		<link rel="stylesheet" href="./style/style.scss" />
+		<!-- connection to the backend -->
+		<script>
+			const socketLibUrl = `http://${location.hostname}:8082/lib/js/socket.io.js`;
+			const socketLibScript = document.createElement("script");
+			socketLibScript.onload = () => {
+				window.socket = io(`ws://${location.hostname}:8082`, { autoConnect: true })
+					.on("connected", () => {
+						window.onSocketLoaded?.();
+					})
+					.on("error", console.error);
+			};
+			socketLibScript.src = socketLibUrl;
+			document.head.appendChild(socketLibScript);
+		</script>
 	</head>
 
 	<body>

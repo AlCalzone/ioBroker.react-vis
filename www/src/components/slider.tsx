@@ -16,13 +16,16 @@ export const Slider: React.FC<SliderProps> = (props) => {
 	const { scale = 3 } = props;
 
 	const [value, setValue] = React.useState(props.value);
+	React.useEffect(() => {
+		setValue(props.value);
+	}, [props.value]);
+
 	const [startY, setStartY] = React.useState<number>();
 	const track = React.useRef<HTMLDivElement>(null);
 
-	const computeValue = React.useCallback(
-		(y) => clamp(Math.round(props.value + (startY! - y) / scale), 0, 100),
-		[startY],
-	);
+	const computeValue = React.useCallback((y) => clamp(Math.round(props.value + (startY! - y) / scale), 0, 100), [
+		startY,
+	]);
 
 	useGestures(track, {
 		onPanStart: (e) => {
