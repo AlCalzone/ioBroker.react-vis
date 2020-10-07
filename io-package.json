@@ -1,0 +1,73 @@
+{
+	"common": {
+		"name": "react-vis",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"zh-cn": "首次出版"
+			}
+		},
+		"title": "React-based visualization",
+		"titleLang": {
+			"en": "React-based visualization",
+			"de": "Reaktionsbasierte Visualisierung",
+			"ru": "Визуализация на основе реакции",
+			"pt": "Visualização baseada em React",
+			"nl": "React-gebaseerde visualisatie",
+			"fr": "Visualisation basée sur les réactions",
+			"it": "Visualizzazione basata su React",
+			"es": "Visualización basada en reacciones",
+			"pl": "Wizualizacja oparta na reakcji",
+			"zh-cn": "基于反应的可视化"
+		},
+		"desc": {
+			"en": "react-vis",
+			"de": "reagieren gegenüber",
+			"ru": "реагировать",
+			"pt": "reac-vis",
+			"nl": "react-vis",
+			"fr": "réagir-vis",
+			"it": "reagire-vis",
+			"es": "reaccionar-vis",
+			"pl": "react-vis",
+			"zh-cn": "对视"
+		},
+		"authors": ["AlCalzone <d.griesel@gmx.net>"],
+		"keywords": ["ioBroker", "template", "Smart Home", "home automation"],
+		"license": "UNLICENSED",
+		"platform": "Javascript/Node.js",
+		"main": "build/main.js",
+		"icon": "react-vis.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/AlCalzone/ioBroker.react-vis/master/admin/react-vis.png",
+		"readme": "https://github.com/AlCalzone/ioBroker.react-vis/blob/master/README.md",
+		"loglevel": "info",
+		"mode": "none",
+		"type": "visualization",
+		"compact": true,
+		"connectionType": "local",
+		"dataSource": "push",
+		"localLink": "%web_protocol%://%ip%:%web_port%/react-vis/index.html",
+		"onlyWWW": true,
+		"singleton": true,
+		"noConfig": true,
+		"dependencies": [
+			{
+				"js-controller": ">=2.0.0",
+				"web": ">=2.0.0"
+			}
+		]
+	},
+	"native": {},
+	"objects": [],
+	"instanceObjects": []
+}
