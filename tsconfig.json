@@ -34,7 +34,6 @@
 		"watch": false,
 		/* Advanced Options */
 		"forceConsistentCasingInFileNames": true, /* Disallow inconsistently-cased references to the same file. */
-		"esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
 	},
 	"include": [
 		"**/*.ts",

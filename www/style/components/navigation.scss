@@ -7,8 +7,6 @@ nav {
 }
 
 nav > .icon-button {
-	--size: calc(50% - 2*var(--spacing));
-	flex: 0 0 var(--size);
+	flex: 0 0 calc(50% - 2 * var(--spacing));
 	margin: var(--spacing);
-	padding-bottom: var(--size);
 }

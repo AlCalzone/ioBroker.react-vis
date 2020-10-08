@@ -32,7 +32,6 @@ interface BoundSetState {
 
 /**
  * Links a React state to a state in ioBroker and returns a way to set the value in the backend.
- * @param stateId The state id to access
  */
 export function useIoBrokerState<T extends ioBroker.State["val"] = ioBroker.State["val"]>(
 	options: UseIoBrokerStateOptions<T> & { defaultValue: T },

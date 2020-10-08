@@ -11,7 +11,7 @@ declare global {
 
 	type ioBrokerSocketEvents = Extract<keyof ioBrokerSocketEventCallbacks, string>;
 
-	export interface IoBrokerSocket extends Socket {
+	interface IoBrokerSocket extends Socket {
 		on<TEvent extends ioBrokerSocketEvents>(event: TEvent, callback: ioBrokerSocketEventCallbacks[TEvent]): this;
 		once<TEvent extends ioBrokerSocketEvents>(event: TEvent, callback: ioBrokerSocketEventCallbacks[TEvent]): this;
 		removeListener<TEvent extends ioBrokerSocketEvents>(
@@ -28,8 +28,8 @@ declare global {
 		// TODO: Limit this to methods
 		emit(event: string, ...args: any[]): this;
 	}
-	export declare const io: io;
-	export declare const socket: IoBrokerSocket;
+	const io: io;
+	const socket: IoBrokerSocket;
 
 	interface Window {
 		io: typeof io;

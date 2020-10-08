@@ -11,6 +11,8 @@ const asyncifiedMethods = {
 	getForeignStateAsync: "getForeignState",
 	getStatesAsync: "getStates",
 	getForeignStatesAsync: "getForeignStates",
+	getObjectAsync: "getObject",
+	setObjectAsync: "setObject",
 } as const;
 type AsyncifiedMethods = typeof asyncifiedMethods;
 type Asyncified = { [M in keyof AsyncifiedMethods]: ioBroker.Adapter[M] };

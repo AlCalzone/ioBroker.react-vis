@@ -11,10 +11,7 @@ export const Dialog: React.FC<DialogProps> = (props) => {
 		<div className="dialog">
 			<div className="dialog-title">
 				<h1>{props.title}</h1>
-				<button
-					className="close-button"
-					onClick={() => props.onClose?.()}
-				>
+				<button className="close-button" onClick={() => props.onClose?.()}>
 					<X size={24} strokeWidth={2} />
 				</button>
 			</div>

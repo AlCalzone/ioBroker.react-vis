@@ -1,10 +1,11 @@
 import * as React from "react";
-import { Dialogs } from "..";
+import { Page } from "../lib/config";
 import { IconButton } from "./iconButton";
-import { Adjustments, Vacuum } from "./icons";
+import * as icons from "./icons";
 
 export interface NavigationProps {
-	onSelectDialog(dialog: Dialogs): void;
+	onSelectItem(item: string): void;
+	items: Pick<Page, "label" | "icon">[];
 }
 
 export const Navigation: React.FC<NavigationProps> = (props) => {
@@ -12,17 +13,17 @@ export const Navigation: React.FC<NavigationProps> = (props) => {
 		<>
 			<h2>Navigation</h2>
 			<nav>
-				<IconButton
-					label="Licht &amp; Rollos"
-					icon={<Adjustments size={40} />}
-					onClick={() => props.onSelectDialog("light")}
-				/>
-				<IconButton
-					label="Staubsauger"
-					icon={<Vacuum size={40} />}
-					onClick={() => props.onSelectDialog("vacuum")}
-					disabled={true}
-				/>
+				{props.items.map(({ label, icon }) => {
+					const Icon = icons[icon];
+					return (
+						<IconButton
+							key={label}
+							label={label}
+							icon={<Icon size={40} />}
+							onClick={() => props.onSelectItem(label)}
+						/>
+					);
+				})}
 			</nav>
 		</>
 	);
