@@ -16,7 +16,7 @@ const Root: React.FC = () => {
 	const [currentPageName, setCurrentPageName] = React.useState<string | undefined>("Licht & Rollos");
 	const clearCurrentPageName = () => setCurrentPageName(undefined);
 
-	// Load layout
+	// TODO: dynamically load layout
 	// const [layout] = useIoBrokerObject({ id: `system.adapter.${namespace}` });
 	// React.useEffect(() => {
 	// 	console.log(layout);

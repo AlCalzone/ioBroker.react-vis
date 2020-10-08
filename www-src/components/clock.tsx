@@ -1,6 +1,6 @@
+import format from "date-fns/format";
+import de from "date-fns/locale/de";
 import * as React from "react";
-import { de } from "date-fns/locale";
-import { format } from "date-fns";
 
 export const Clock: React.FC = () => {
 	const [now, setNow] = React.useState(new Date());
