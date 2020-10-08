@@ -13,11 +13,11 @@ const Slider: React.FC<SliderProps> = (props) => {
 	});
 	const [object] = useIoBrokerObject({ id: props.id, subscribe: false });
 
-	if (value != undefined && object != undefined) {
+	if (value !== undefined && object != undefined) {
 		return (
 			<SliderComponent
 				label={props.label}
-				value={value}
+				value={value ?? 0}
 				onValueChanged={setValue}
 				min={object.common.min}
 				max={object.common.max}

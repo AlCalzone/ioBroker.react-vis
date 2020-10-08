@@ -19,6 +19,7 @@ export function useIoBrokerObject<T extends ioBroker.Object = ioBroker.Object>(
 	const [object, setObject] = React.useState<T>();
 
 	const onObjectChange: ioBroker.ObjectChangeHandler = (changedId, object) => {
+		console.log(`received object ${id}`);
 		if (object && changedId === id) {
 			setObject(object as T);
 		}
@@ -27,8 +28,10 @@ export function useIoBrokerObject<T extends ioBroker.Object = ioBroker.Object>(
 	React.useEffect(() => {
 		(async () => {
 			// Load value initially
+			console.log(`getObject ${id}`);
 			if (subscribe) await subscribeObjectsAsync(id);
 			setObject((await getObjectAsync(id)) as T);
+			console.log(`received object ${id}`);
 
 			// And update it on changes
 			socket.on("objectChange", onObjectChange);

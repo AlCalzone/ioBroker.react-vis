@@ -34,8 +34,10 @@
 			var(--color-bg-alt_alpha) calc(var(--percentage) * 1%)
 		);
 		// Text mittig auf grün ausrichten
-		padding-top: calc((1 - var(--percentage) / 100) * var(--height));
-		line-height: calc(var(--percentage) / 100 * var(--height));
+		--text-top: calc((1 - var(--percentage) / 100) * var(--height));
+		--min-text-height: 20px;
+		padding-top: min(var(--text-top), calc(var(--height) - var(--min-text-height)));
+		line-height: max(var(--min-text-height), calc(var(--percentage) / 100 * var(--height)));
 
 		text-align: center;
 		font-size: var(--font-size-medium);

@@ -14,6 +14,13 @@ const config: Config = {
 							className: "button-list",
 							items: [
 								{
+									widgetType: "button",
+									label: "Alles aus",
+									icon: "BulbOff",
+									id: "javascript.0.Licht.allOff",
+									variant: "error",
+								},
+								{
 									widgetType: "toggle-button",
 									label: "Küche",
 									icon: { false: "BulbOff", true: "BulbOn" },
@@ -132,6 +139,11 @@ const config: Config = {
 						{
 							widgetType: "item-list",
 							items: [
+								{
+									widgetType: "slider",
+									label: "Alle Rollos",
+									id: "javascript.0.Rollo.setAll",
+								},
 								{
 									widgetType: "slider",
 									label: "Schlafzimmer",

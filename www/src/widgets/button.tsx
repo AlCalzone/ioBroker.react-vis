@@ -12,6 +12,13 @@ const Button: React.FC<ButtonProps> = (props) => {
 		subscribe: false,
 	});
 	const Icon = icons[props.icon];
-	return <IconButton label={props.label} icon={<Icon size={40} />} onClick={() => setValue(props.value)} />;
+	return (
+		<IconButton
+			label={props.label}
+			icon={<Icon size={40} />}
+			onClick={() => setValue(props.value ?? true)}
+			variant={props.variant}
+		/>
+	);
 };
 export default Button;

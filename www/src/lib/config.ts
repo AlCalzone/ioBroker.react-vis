@@ -1,3 +1,5 @@
+import { IconButtonProps } from "../components/iconButton";
+
 /* eslint-disable @typescript-eslint/no-namespace */
 export type Icon = keyof typeof import("../components/icons");
 
@@ -37,7 +39,8 @@ export namespace Widgets {
 		label: string;
 		icon: Icon;
 		id: string;
-		value: any;
+		value?: any;
+		variant?: IconButtonProps["variant"];
 	}
 
 	export interface ItemList {
