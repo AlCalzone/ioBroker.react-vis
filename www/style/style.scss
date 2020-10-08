@@ -15,12 +15,11 @@ body {
 	padding: 0;
 	min-width: 960px;
 	user-select: none;
-
+	overflow: hidden;
 }
 
 body {
-	background: var(--color-bg) url(../assets/background.jpg) top center
-		no-repeat;
+	background: var(--color-bg) url(../assets/background.jpg) top center no-repeat;
 	background-size: cover;
 }
 
@@ -33,6 +32,11 @@ body {
 	display: grid;
 	grid-template-columns: [start] repeat(3, 1fr) [content-start] repeat(9, 1fr) [end];
 	column-gap: 20px;
+}
+
+.item-list {
+	display: flex;
+	flex-flow: row wrap;
 }
 
 @import "./components/typography.scss";

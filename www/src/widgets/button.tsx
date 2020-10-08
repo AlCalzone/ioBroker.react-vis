@@ -7,18 +7,11 @@ import { useIoBrokerState } from "../lib/useIoBrokerState";
 export type ButtonProps = Omit<WidgetTypes.Button, "type">;
 
 const Button: React.FC<ButtonProps> = (props) => {
-	const Icon = icons[props.icon];
-	const [value, setValue] = useIoBrokerState({
+	const [, setValue] = useIoBrokerState({
 		id: props.id,
-		writeId: props.writeId,
+		subscribe: false,
 	});
-	return (
-		<IconButton
-			label={props.label}
-			icon={<Icon size={40} />}
-			variant={value ? "active" : undefined}
-			onClick={() => setValue(!value)}
-		/>
-	);
+	const Icon = icons[props.icon];
+	return <IconButton label={props.label} icon={<Icon size={40} />} onClick={() => setValue(props.value)} />;
 };
 export default Button;

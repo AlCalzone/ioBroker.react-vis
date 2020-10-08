@@ -5,6 +5,8 @@ main {
 	display: block;
 	grid-column: content-start / end;
 	width: 100%;
+	max-height: 100vh;
+	display: flex;
 
-	margin: var(--row-gutter) 0;
+	padding: var(--row-gutter) 0;
 }

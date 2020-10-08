@@ -19,6 +19,9 @@
 	& > button {
 		flex: 0 1 40px;
 		background-color: var(--color-bg_alpha_stacked);
+		&:active {
+			background-color: rgba(var(--feldgrau), 0.5);
+		}
 		color: white;
 	}
 	& > .track {
@@ -39,9 +42,4 @@
 
 		cursor: ns-resize;
 	}
-}
-
-.slider-list {
-	display: flex;
-	flex-flow: row wrap;
 }

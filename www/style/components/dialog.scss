@@ -3,6 +3,11 @@
 
 .dialog {
 	width: 100%;
+	max-height: calc(100% - 2 * var(--row-gutter));
+	overflow: hidden;
+	display: flex;
+	flex-flow: column nowrap;
+
 	@include panel-background();
 
 	& > .dialog-title {
@@ -10,6 +15,7 @@
 		padding-left: var(--spacing);
 
 		display: flex;
+		flex: 0 0 auto;
 		flex-flow: row nowrap;
 
 		& > h1 {
@@ -18,17 +24,22 @@
 			margin: 0;
 			line-height: 1;
 			align-self: center;
-
 		}
 		& > .close-button {
 			flex: 0 0 auto;
 			background: transparent;
-			color: white
+			color: white;
 		}
 	}
 
 	& > .dialog-content {
 		min-height: 200px;
+
 		padding: var(--spacing);
+		overflow-y: auto;
+
+		& > :last-child {
+			margin-bottom: var(--spacing);
+		}
 	}
 }

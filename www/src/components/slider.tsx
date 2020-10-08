@@ -1,43 +1,57 @@
-import * as React from "react";
-import { ChevronDown, ChevronUp } from "./icons";
 import { clamp } from "alcalzone-shared/math";
+import * as React from "react";
 import useGestures from "../lib/useGestures";
+import { ChevronDown, ChevronUp } from "./icons";
 
 export interface SliderProps {
 	label: string;
 	value: number;
+	min?: number;
+	max?: number;
 	scale?: number;
-	onUpClicked(): void;
-	onDownClicked(): void;
-	onValueChanged(value: number): void;
+	onValueChanged(newValue: number): void;
 }
 
 export const Slider: React.FC<SliderProps> = (props) => {
-	const { scale = 3 } = props;
+	const { scale = 3, min = 0, max = 100 } = props;
 
-	const [value, setValue] = React.useState(props.value);
+	const valueToPercentage = React.useCallback(
+		(value: number) => {
+			return Math.round(((value - min) / (max - min)) * 100);
+		},
+		[min, max],
+	);
+	const valueFromPercentage = React.useCallback(
+		(percentage: number) => {
+			return Math.round(min + (percentage / 100) * (max - min));
+		},
+		[min, max],
+	);
+
+	const [percentage, setPercentage] = React.useState(valueToPercentage(props.value));
 	React.useEffect(() => {
-		setValue(props.value);
+		setPercentage(valueToPercentage(props.value));
 	}, [props.value]);
 
 	const [startY, setStartY] = React.useState<number>();
 	const track = React.useRef<HTMLDivElement>(null);
 
-	const computeValue = React.useCallback((y) => clamp(Math.round(props.value + (startY! - y) / scale), 0, 100), [
-		startY,
-	]);
+	const computePercentage = React.useCallback(
+		(y) => clamp(Math.round(valueToPercentage(props.value) + (startY! - y) / scale), 0, 100),
+		[props.value, startY],
+	);
 
 	useGestures(track, {
 		onPanStart: (e) => {
 			setStartY(e.y);
 		},
 		onPanMove: (e) => {
-			setValue(computeValue(e.y));
+			setPercentage(computePercentage(e.y));
 		},
 		onPanEnd: (e) => {
-			const newValue = computeValue(e.y);
-			setValue(newValue);
-			props.onValueChanged?.(newValue);
+			const newPercentage = computePercentage(e.y);
+			setPercentage(newPercentage);
+			props.onValueChanged?.(valueFromPercentage(newPercentage));
 		},
 	});
 
@@ -47,8 +61,8 @@ export const Slider: React.FC<SliderProps> = (props) => {
 			<button
 				className="up"
 				onClick={() => {
-					setValue(100);
-					props.onUpClicked();
+					setPercentage(100);
+					props.onValueChanged?.(valueFromPercentage(100));
 				}}
 			>
 				<ChevronUp size={24} />
@@ -58,16 +72,16 @@ export const Slider: React.FC<SliderProps> = (props) => {
 				ref={track}
 				style={{
 					// @ts-expect-error React does not like custom CSS props
-					"--percentage": value,
+					"--percentage": percentage,
 				}}
 			>
-				{value} %
+				{percentage} %
 			</div>
 			<button
 				className="down"
 				onClick={() => {
-					setValue(0);
-					props.onDownClicked();
+					setPercentage(0);
+					props.onValueChanged?.(valueFromPercentage(0));
 				}}
 			>
 				<ChevronDown size={24} />

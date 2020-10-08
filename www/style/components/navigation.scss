@@ -9,4 +9,5 @@ nav {
 nav > .icon-button {
 	flex: 0 0 calc(50% - 2 * var(--spacing));
 	margin: var(--spacing);
+	--padding: 5px;
 }

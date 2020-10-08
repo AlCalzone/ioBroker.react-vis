@@ -19,6 +19,10 @@ button:hover:not(.disabled):not(:disabled) {
 	filter: brightness(110%) saturate(140%);
 }
 
+button:active {
+	background-color: rgba(var(--feldgrau), 0.5);
+}
+
 .aspect-ratio-hack {
 	--ratio: 1;
 	height: 0;
@@ -28,7 +32,7 @@ button:hover:not(.disabled):not(:disabled) {
 }
 
 .icon-button {
-	width: 100%;
+	width: var(--size, 100%);
 	max-width: 120px;
 	padding: 0;
 	overflow: hidden;
@@ -39,7 +43,7 @@ button:hover:not(.disabled):not(:disabled) {
 		left: 0;
 		height: 100%;
 		width: 100%;
-		padding: var(--spacing);
+		padding: var(--padding, var(--spacing));
 
 		display: flex;
 		flex-flow: column nowrap;
@@ -49,10 +53,13 @@ button:hover:not(.disabled):not(:disabled) {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin-top: calc(-1 * var(--spacing));
+			// margin-top: calc(-1 * var(--spacing));
 		}
 		& > .label {
 			flex: 0 1 auto;
+			text-align: center;
+			word-wrap: break-word;
+			line-height: 1;
 		}
 	}
 
@@ -60,7 +67,7 @@ button:hover:not(.disabled):not(:disabled) {
 	background-color: var(--color-bg_alpha_stacked);
 	color: white;
 
-	&.active {
+	&.active:not(:active) {
 		text-shadow: 0 0 5px rgba(255, 255, 255, 0.85);
 		background-color: var(--color-green_alpha);
 		& .icon {
@@ -69,34 +76,27 @@ button:hover:not(.disabled):not(:disabled) {
 		}
 	}
 
-	&.inactive,
-	&:disabled {
+	&.inactive:not(:active),
+	&:disabled:not(:active) {
 		background-color: var(--color-bg_alpha);
 		color: var(--color-text-alt_inactive);
 		& .icon {
 			color: var(--color-text-dark_inactive);
 		}
 	}
-	&:disabled {
+	&:disabled:not(:active) {
 		cursor: default;
 	}
 
-	&.error {
+	&.error:not(:active) {
 		background-color: var(--color-red_alpha_stacked);
 		color: var(--color-red_alpha);
 	}
 }
 
-.icon-button-list {
-	display: flex;
-	flex-flow: row wrap;
-	margin-right: calc(-1 * var(--spacing));
-
-	& > .icon-button {
-		--size: 100px;
-		flex: 0 0 auto;
-		margin: var(--spacing) var(--spacing) 0 0;
-		width: var(--size);
-		padding-bottom: var(--size);
-	}
+.item-list.button-list > .icon-button {
+	--size: 100px;
+	flex: 0 0 auto;
+	margin-right: var(--spacing);
+	margin-bottom: var(--spacing);
 }
