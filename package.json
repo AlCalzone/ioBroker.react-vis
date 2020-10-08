@@ -61,7 +61,7 @@
   },
   "scripts": {
     "prebuild:parcel": "rimraf ./www",
-    "build:parcel": "cross-env NODE_ENV=production parcel build www-src/index.html -d www",
+    "build:parcel": "cross-env NODE_ENV=production parcel build www-src/index.html -d www --public-url /react-vis/",
     "build:ts": "tsc -p tsconfig.build.json",
     "build": "npm run build:ts && npm run build:parcel",
     "watch:parcel": "parcel www-src/index.html -d www --hmr-port 1235",
