@@ -11,7 +11,7 @@ import config from "./config.json";
 // const namespace = "react-vis.0";
 
 const Root: React.FC = () => {
-	const [currentPageName, setCurrentPageName] = React.useState<string | undefined>("Heizung");
+	const [currentPageName, setCurrentPageName] = React.useState<string | undefined>("Licht & Rollos");
 	const clearCurrentPageName = () => setCurrentPageName(undefined);
 
 	// TODO: dynamically load layout
