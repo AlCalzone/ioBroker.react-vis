@@ -153,3 +153,358 @@ export const BulbOn: React.FC<IconProps> = (props) => {
 		</svg>
 	);
 };
+
+export const Directions: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<path d="M9 5h10l2 2l-2 2h-10a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" />
+			<path d="M13 13h-7l-2 2l2 2h7a1 1 0 0 0 1 -1v-2a1 1 0 0 0 -1 -1" />
+			<line x1="12" y1="22" x2="12" y2="17" />
+			<line x1="12" y1="13" x2="12" y2="9" />
+			<line x1="12" y1="5" x2="12" y2="3" />
+		</svg>
+	);
+};
+
+export const GasStation: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<path d="M13 11h1a2 2 0 0 1 2 2v3a1.5 1.5 0 0 0 3 0v-7l-3 -3" />
+			<line x1="4" y1="19" x2="14" y2="19" />
+			<line x1="5" y1="11" x2="13" y2="11" />
+			<path d="M5 19v-12a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v12" />
+			<path d="M17 7v1a1 1 0 0 0 1 1h1" />
+		</svg>
+	);
+};
+
+export const Play: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<path d="M7 4v16l13 -8z" />
+		</svg>
+	);
+};
+
+export const Pause: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<rect x="6" y="5" width="4" height="14" rx="1" />
+			<rect x="14" y="5" width="4" height="14" rx="1" />
+		</svg>
+	);
+};
+
+export const Stop: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<rect x="5" y="5" width="14" height="14" rx="2" />
+		</svg>
+	);
+};
+
+export const Trash: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<line x1="4" y1="7" x2="20" y2="7" />
+			<line x1="10" y1="11" x2="10" y2="17" />
+			<line x1="14" y1="11" x2="14" y2="17" />
+			<path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+			<path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+		</svg>
+	);
+};
+
+export const Kitchen: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<path d="M4 3h8l-1 9h-6z" />
+			<path d="M7 18h2v3h-2z" />
+			<path d="M20 3v12h-5c-.023-3.681.184-7.406 5-12z" />
+			<path d="M20 15v6h-1v-3" />
+			<line x1="8" y1="12" x2="8" y2="18" />
+		</svg>
+	);
+};
+
+export const Bed: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<path d="M3 7v11m0 -4h18m0 4v-8a2 2 0 0 0 -2 -2h-8v6" />
+			<circle cx="7" cy="10" r="1" />
+		</svg>
+	);
+};
+
+export const TV: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<rect x="3" y="7" width="18" height="13" rx="2" />
+			<polyline points="16 3 12 7 8 3" />
+		</svg>
+	);
+};
+
+export const Temperature: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<path d="M10 13.5a4 4 0 1 0 4 0v-8.5a2 2 0 0 0 -4 0v8.5" />
+			<line x1="10" y1="9" x2="14" y2="9" />
+		</svg>
+	);
+};
+
+export const TemperaturePlus: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<path d="M8 13.5a4 4 0 1 0 4 0v-8.5a2 2 0 0 0 -4 0v8.5" />
+			<line x1="8" y1="9" x2="12" y2="9" />
+			<line x1="16" y1="9" x2="22" y2="9" />
+			<line x1="19" y1="6" x2="19" y2="12" />
+		</svg>
+	);
+};
+
+export const TemperatureMinus: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<path d="M8 13.5a4 4 0 1 0 4 0v-8.5a2 2 0 0 0 -4 0v8.5" />
+			<line x1="8" y1="9" x2="12" y2="9" />
+			<line x1="16" y1="9" x2="22" y2="9" />
+		</svg>
+	);
+};
+
+export const Briefcase: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<rect x="3" y="7" width="18" height="13" rx="2" />
+			<path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
+			<line x1="12" y1="12" x2="12" y2="12.01" />
+			<path d="M3 13a20 20 0 0 0 18 0" />
+		</svg>
+	);
+};
+
+export const Mug: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<path d="M5 6h10a1 1 0 0 1 1 1v8a4 4 0 0 1 -4 4h-4a4 4 0 0 1 -4 -4v-8a1 1 0 0 1 1 -1" />
+			<path d="M16 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-2" />
+		</svg>
+	);
+};
+
+export const Snowflake: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" />
+			<path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(60 12 12)" />
+			<path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(120 12 12)" />
+			<path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(180 12 12)" />
+			<path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(240 12 12)" />
+			<path d="M10 4l2 1l2 -1m-2 -2v6.5l3 1.72" transform="rotate(300 12 12)" />
+		</svg>
+	);
+};
+
+export const Clock: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<circle cx="12" cy="12" r="9" />
+			<polyline points="12 7 12 12 15 15" />
+		</svg>
+	);
+};

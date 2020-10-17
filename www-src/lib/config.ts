@@ -18,7 +18,14 @@ export interface Section {
 	widgets: Widget[];
 }
 
-export type Widget = Widgets.ToggleButton | Widgets.ItemList | Widgets.Slider | Widgets.Button;
+export type Widget =
+	| Widgets.If
+	| Widgets.ToggleButton
+	| Widgets.ItemList
+	| Widgets.Slider
+	| Widgets.Button
+	| Widgets.RadioButton
+	| Widgets.Thermostat;
 
 export namespace Widgets {
 	export interface ToggleButton {
@@ -32,6 +39,21 @@ export namespace Widgets {
 			  };
 		id: string;
 		writeId?: string;
+	}
+
+	export interface RadioButton {
+		widgetType: "radio-button";
+		label: string;
+		icon:
+			| Icon
+			| {
+					true: Icon;
+					false: Icon;
+			  };
+		id: string;
+		writeId?: string;
+		value?: any;
+		onValue?: any;
 	}
 
 	export interface Button {
@@ -54,5 +76,22 @@ export namespace Widgets {
 		label: string;
 		id: string;
 		writeId?: string;
+	}
+
+	export interface Thermostat {
+		widgetType: "thermostat";
+		label: string;
+		id: string;
+		unit?: string;
+		min?: number;
+		max?: number;
+		step?: number;
+	}
+
+	export interface If {
+		widgetType: "if";
+		id: string;
+		value?: any;
+		child: Widget;
 	}
 }

@@ -174,6 +174,201 @@ const config: Config = {
 				},
 			],
 		},
+		{
+			label: "Staubsauger",
+			icon: "Vacuum",
+			sections: [
+				{
+					label: "Saugen",
+					widgets: [
+						{
+							widgetType: "item-list",
+							className: "button-list",
+							items: [
+								{
+									widgetType: "radio-button",
+									label: "Alles saugen",
+									icon: "Play",
+									writeId: "mihome-vacuum.0.control.start",
+									id: "mihome-vacuum.0.control.clean_home",
+								},
+								{
+									widgetType: "button",
+									label: "Pause",
+									icon: "Pause",
+									id: "mihome-vacuum.0.control.pause",
+								},
+								{
+									widgetType: "radio-button",
+									label: "Zur Ladestation",
+									icon: "GasStation",
+									id: "javascript.0.Staubsauger.stop",
+								},
+								{
+									widgetType: "button",
+									label: "Wo bin ich?",
+									icon: "Directions",
+									id: "mihome-vacuum.0.control.find",
+								},
+								// {
+								// 	widgetType: "button",
+								// 	label: "Zum Mülleimer",
+								// 	icon: "Trash",
+								// 	id: "javascript.0.Staubsauger.stop",
+								// },
+							],
+						},
+					],
+				},
+				{
+					label: "Einzelraumreinigung",
+					widgets: [
+						{
+							widgetType: "item-list",
+							className: "button-list",
+							items: [
+								{
+									widgetType: "radio-button",
+									label: "Küche",
+									icon: "Kitchen",
+									id: "javascript.0.Staubsauger.Küche",
+								},
+								{
+									widgetType: "radio-button",
+									label: "Bad",
+									icon: "Play",
+									id: "javascript.0.Staubsauger.Bad",
+								},
+								{
+									widgetType: "radio-button",
+									label: "Flur",
+									icon: "Play",
+									id: "javascript.0.Staubsauger.Flur",
+								},
+								{
+									widgetType: "radio-button",
+									label: "Schlafzimmer",
+									icon: "Bed",
+									id: "javascript.0.Staubsauger.Schlafzimmer",
+								},
+								{
+									widgetType: "radio-button",
+									label: "Wohnzimmer",
+									icon: "TV",
+									id: "javascript.0.Staubsauger.Wohnzimmer",
+								},
+							],
+						},
+					],
+				},
+				{
+					label: "Feintuning",
+					widgets: [
+						{
+							widgetType: "slider",
+							label: "Leistung",
+							id: "mihome-vacuum.0.control.fan_power",
+						},
+					],
+				},
+			],
+		},
+		{
+			label: "Heizung",
+			icon: "Temperature",
+			sections: [
+				{
+					label: "Wohnzimmer",
+					widgets: [
+						{
+							widgetType: "item-list",
+							className: "button-list",
+							items: [
+								{
+									widgetType: "radio-button",
+									label: "Aus",
+									icon: "Snowflake",
+									id: "zwave2.0.Node_019.Thermostat_Mode.mode",
+									value: 0,
+								},
+								{
+									widgetType: "radio-button",
+									label: "Manuell",
+									icon: "Mug",
+									id: "zwave2.0.Node_019.Thermostat_Mode.mode",
+									value: 1,
+								},
+								{
+									widgetType: "radio-button",
+									label: "Automatisch",
+									icon: "Clock",
+									id: "zwave2.0.Node_019.Thermostat_Mode.mode",
+									value: 11,
+								},
+								{
+									widgetType: "radio-button",
+									label: "Urlaubs-Modus",
+									icon: "Briefcase",
+									id: "zwave2.0.Node_019.Thermostat_Mode.mode",
+									value: 13,
+								},
+								{
+									widgetType: "if",
+									id: "zwave2.0.Node_019.Thermostat_Mode.mode",
+									value: 1,
+									child: {
+										widgetType: "thermostat",
+										label: "Temperatur",
+										id: "zwave2.0.Node_019.Thermostat_Setpoint.setpoint_heating",
+										min: 15,
+										max: 23,
+										step: 0.5,
+									},
+								},
+							],
+						},
+					],
+				},
+				{
+					label: "Schlafzimmer",
+					widgets: [
+						{
+							widgetType: "item-list",
+							className: "button-list",
+							items: [
+								{
+									widgetType: "radio-button",
+									label: "Aus",
+									icon: "Snowflake",
+									id: "zwave2.0.Node_020.Thermostat_Mode.mode",
+									value: 0,
+								},
+								{
+									widgetType: "radio-button",
+									label: "Manuell",
+									icon: "Mug",
+									id: "zwave2.0.Node_020.Thermostat_Mode.mode",
+									value: 1,
+								},
+								{
+									widgetType: "if",
+									id: "zwave2.0.Node_020.Thermostat_Mode.mode",
+									value: 1,
+									child: {
+										widgetType: "thermostat",
+										label: "Temperatur",
+										id: "zwave2.0.Node_020.Thermostat_Setpoint.setpoint_heating",
+										min: 15,
+										max: 20,
+										step: 0.5,
+									},
+								},
+							],
+						},
+					],
+				},
+			],
+		},
 	],
 };
 

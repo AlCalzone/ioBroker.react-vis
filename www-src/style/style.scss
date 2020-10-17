@@ -37,6 +37,10 @@ body {
 .item-list {
 	display: flex;
 	flex-flow: row wrap;
+	& > * {
+		margin-right: var(--spacing);
+		margin-bottom: var(--spacing);
+	}
 }
 
 @import "./components/typography.scss";
@@ -47,3 +51,4 @@ body {
 @import "./components/navigation.scss";
 @import "./components/dialog.scss";
 @import "./components/slider.scss";
+@import "./components/thermostat.scss";

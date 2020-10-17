@@ -7,13 +7,11 @@ import { Page } from "./components/page";
 // import { useIoBrokerObject } from "./lib/useIoBrokerObject";
 import config from "./config.json";
 
-export type Dialogs = "light" | "vacuum";
-
 // TODO: Detect from the URL
 // const namespace = "react-vis.0";
 
 const Root: React.FC = () => {
-	const [currentPageName, setCurrentPageName] = React.useState<string | undefined>("Licht & Rollos");
+	const [currentPageName, setCurrentPageName] = React.useState<string | undefined>("Heizung");
 	const clearCurrentPageName = () => setCurrentPageName(undefined);
 
 	// TODO: dynamically load layout

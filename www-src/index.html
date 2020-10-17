@@ -5,16 +5,35 @@
 		<link rel="stylesheet" href="./style/style.scss" />
 		<!-- connection to the backend -->
 		<script>
+			const log = (text) => {
+				console.log(text);
+				const line = document.createElement("p");
+				line.innerHTML = text;
+				document.getElementById("log").appendChild(line);
+			};
 			const socketUrl = location.port === "1234" ? `https://heizung.fritz.box:8082` : `https://${location.host}`;
 			const socketLibUrl = `${socketUrl}/lib/js/socket.io.js`;
 			const socketLibScript = document.createElement("script");
 			socketLibScript.onload = () => {
-				window.socket = io(socketUrl)
-					.on("connected", () => {
-						window.onSocketLoaded?.();
-					})
-					.on("error", console.error)
-					.open();
+				window.socket = io(socketUrl).on("connect", () => {
+					log("connect");
+					window.onSocketLoaded?.();
+				});
+
+				for (const event of [
+					"error",
+					"connect_error",
+					"disconnect",
+					"connect_timeout",
+					"reconnect",
+					"reconnect_failed",
+					"reconnect_error",
+				]) {
+					window.socket.on(event, (...args) => {
+						log(`${event}: ${JSON.stringify(args)}`);
+					});
+				}
+				window.socket.open();
 			};
 			socketLibScript.onerror = (e) => {
 				console.error(JSON.stringify(e));
@@ -28,5 +47,17 @@
 		<div id="app"></div>
 		<!-- load parcel sources -->
 		<script type="text/javascript" src="./index.tsx"></script>
+		<div
+			id="log"
+			style="
+				color: red;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				z-index: 1000;
+				background: white;
+				line-height: 1;
+			"
+		></div>
 	</body>
 </html>

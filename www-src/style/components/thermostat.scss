@@ -1,0 +1,48 @@
+@import "../includes/variables.scss";
+@import "../includes/mixins.scss";
+
+.thermostat {
+	width: var(--size, 100%);
+	max-width: 120px;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+
+	& .child {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		// padding: var(--padding, var(--spacing));
+		background-color: var(--color-bg_alpha_stacked);
+
+		display: flex;
+		flex-flow: column nowrap;
+
+		& > button {
+			flex: 0 1 20px;
+			padding: 0;
+			background-color: transparent;
+			&:active {
+				background-color: rgba(var(--feldgrau), 0.5);
+			}
+			color: white;
+		}
+
+		& > .temperature {
+			flex: 0;
+			font-size: var(--font-size-large);
+			text-align: center;
+			line-height: 1;
+			margin: auto 0;
+		}
+
+		& > label {
+			flex: 0;
+			text-align: center;
+			word-wrap: break-word;
+			line-height: 1;
+		}
+	}
+}

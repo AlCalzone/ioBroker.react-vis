@@ -94,9 +94,7 @@ button:active {
 	}
 }
 
-.item-list.button-list > .icon-button {
+.item-list.button-list > * {
 	--size: 100px;
 	flex: 0 0 auto;
-	margin-right: var(--spacing);
-	margin-bottom: var(--spacing);
 }

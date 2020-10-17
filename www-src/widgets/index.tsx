@@ -1,15 +1,21 @@
 import * as React from "react";
 import { Widget } from "../lib/config";
 import button from "./button";
+import _if from "./if";
 import itemList from "./item-list";
+import radioButton from "./radio-button";
 import slider from "./slider";
+import thermostat from "./thermostat";
 import toggleButton from "./toggle-button";
 
 const index = {
 	button: button,
 	"toggle-button": toggleButton,
+	"radio-button": radioButton,
 	"item-list": itemList,
 	slider: slider,
+	thermostat: thermostat,
+	if: _if,
 };
 
 export default index;
@@ -18,6 +24,7 @@ export default index;
 export function renderWidget(widget: Widget, key?: any) {
 	const { widgetType, ...widgetProps } = widget;
 	const Widget = index[widgetType];
+	const randomKey = [...crypto.getRandomValues(new Uint8Array(8))].map((i) => i.toString(16)).join("");
 	// @ts-expect-error
-	return <Widget key={key} {...widgetProps} />;
+	return <Widget key={`${randomKey}-${key}`} {...widgetProps} />;
 }
