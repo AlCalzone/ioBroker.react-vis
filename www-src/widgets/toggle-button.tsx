@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IconButton } from "../components/iconButton";
-import * as icons from "../components/icons";
+import { IconOrIndicator } from "../components/iconOrIndicator";
 import type { Widgets as WidgetTypes } from "../lib/config";
 import { useIoBrokerObject } from "../lib/useIoBrokerObject";
 import { useIoBrokerState } from "../lib/useIoBrokerState";
@@ -8,7 +8,7 @@ import { useIoBrokerState } from "../lib/useIoBrokerState";
 export type ToggleButtonProps = Omit<WidgetTypes.ToggleButton, "type">;
 
 const ToggleButton: React.FC<ToggleButtonProps> = (props) => {
-	const [value, setValue] = useIoBrokerState<number | boolean>({
+	const [value, ack, setValue] = useIoBrokerState<number | boolean>({
 		id: props.id,
 		writeId: props.writeId,
 	});
@@ -16,7 +16,6 @@ const ToggleButton: React.FC<ToggleButtonProps> = (props) => {
 
 	if (value != undefined && object != undefined) {
 		const currentIcon = typeof props.icon === "string" ? props.icon : !!value ? props.icon.true : props.icon.false;
-		const Icon = icons[currentIcon];
 		let isOn: boolean;
 		let toggleValue: number | boolean;
 
@@ -34,7 +33,7 @@ const ToggleButton: React.FC<ToggleButtonProps> = (props) => {
 		return (
 			<IconButton
 				label={props.label}
-				icon={<Icon size={40} />}
+				icon={<IconOrIndicator icon={currentIcon} working={!ack} size={40} />}
 				variant={isOn ? "active" : undefined}
 				onClick={() => setValue(toggleValue)}
 			/>

@@ -7,7 +7,7 @@ import { useIoBrokerState } from "../lib/useIoBrokerState";
 export type ThermostatProps = Omit<WidgetTypes.Thermostat, "type">;
 
 const Thermostat: React.FC<ThermostatProps> = (props) => {
-	const [value, setValue] = useIoBrokerState<number>({
+	const [value, ack, setValue] = useIoBrokerState<number>({
 		id: props.id,
 	});
 	const [object] = useIoBrokerObject({ id: props.id, subscribe: false });

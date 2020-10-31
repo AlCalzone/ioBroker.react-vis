@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Page } from "../lib/config";
 import { IconButton } from "./iconButton";
-import * as icons from "./icons";
+import { IconOrIndicator } from "./iconOrIndicator";
 
 export interface NavigationProps {
 	onSelectItem(item: string): void;
@@ -14,12 +14,11 @@ export const Navigation: React.FC<NavigationProps> = (props) => {
 			<h2>Navigation</h2>
 			<nav>
 				{props.items.map(({ label, icon }) => {
-					const Icon = icons[icon];
 					return (
 						<IconButton
 							key={label}
 							label={label}
-							icon={<Icon size={40} />}
+							icon={<IconOrIndicator icon={icon} size={40} />}
 							onClick={() => props.onSelectItem(label)}
 						/>
 					);

@@ -1,21 +1,20 @@
 import * as React from "react";
 import { IconButton } from "../components/iconButton";
-import * as icons from "../components/icons";
+import { IconOrIndicator } from "../components/iconOrIndicator";
 import type { Widgets as WidgetTypes } from "../lib/config";
 import { useIoBrokerState } from "../lib/useIoBrokerState";
 
 export type ButtonProps = Omit<WidgetTypes.Button, "type">;
 
 const Button: React.FC<ButtonProps> = (props) => {
-	const [, setValue] = useIoBrokerState({
+	const [, ack, setValue] = useIoBrokerState({
 		id: props.id,
-		subscribe: false,
+		subscribe: true,
 	});
-	const Icon = icons[props.icon];
 	return (
 		<IconButton
 			label={props.label}
-			icon={<Icon size={40} />}
+			icon={<IconOrIndicator icon={props.icon} working={!ack} size={40} />}
 			onClick={() => setValue(props.value ?? true)}
 			variant={props.variant}
 		/>

@@ -1,7 +1,7 @@
 import { IconButtonProps } from "../components/iconButton";
 
 /* eslint-disable @typescript-eslint/no-namespace */
-export type Icon = keyof typeof import("../components/icons");
+export type Icon = Exclude<keyof typeof import("../components/icons"), "Loader">;
 
 export interface Config {
 	pages: Page[];

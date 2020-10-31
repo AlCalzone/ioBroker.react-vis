@@ -508,3 +508,46 @@ export const Clock: React.FC<IconProps> = (props) => {
 		</svg>
 	);
 };
+
+export interface LoaderIconProps extends IconProps {
+	/** How many milliseconds a complete animation should take */
+	duration?: number;
+}
+
+export const Loader: React.FC<LoaderIconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth, duration = 1000 } = props;
+
+	const [step, setStep] = React.useState(0);
+	const numSteps = 16;
+	React.useEffect(() => {
+		const animationInterval = setInterval(() => {
+			setStep((step) => (step + 1) % numSteps);
+		}, duration / numSteps);
+		return () => clearInterval(animationInterval);
+	}, []);
+
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			className="loader-icon"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<line opacity={step >= 0 && step <= 8 ? 1 : 0} x1="12" y1="6" x2="12" y2="3" />
+			<line opacity={step >= 1 && step <= 9 ? 1 : 0} x1="16.25" y1="7.75" x2="18.4" y2="5.6" />
+			<line opacity={step >= 2 && step <= 10 ? 1 : 0} x1="18" y1="12" x2="21" y2="12" />
+			<line opacity={step >= 3 && step <= 11 ? 1 : 0} x1="16.25" y1="16.25" x2="18.4" y2="18.4" />
+			<line opacity={step >= 4 && step <= 12 ? 1 : 0} x1="12" y1="18" x2="12" y2="21" />
+			<line opacity={step >= 5 && step <= 13 ? 1 : 0} x1="7.75" y1="16.25" x2="5.6" y2="18.4" />
+			<line opacity={step >= 6 && step <= 14 ? 1 : 0} x1="6" y1="12" x2="3" y2="12" />
+			<line opacity={step >= 7 && step <= 15 ? 1 : 0} x1="7.75" y1="7.75" x2="5.6" y2="5.6" />
+		</svg>
+	);
+};

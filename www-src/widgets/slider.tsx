@@ -7,7 +7,7 @@ import { useIoBrokerState } from "../lib/useIoBrokerState";
 export type SliderProps = Omit<WidgetTypes.Slider, "type">;
 
 const Slider: React.FC<SliderProps> = (props) => {
-	const [value, setValue] = useIoBrokerState<number>({
+	const [value, ack, setValue] = useIoBrokerState<number>({
 		id: props.id,
 		writeId: props.writeId,
 	});
