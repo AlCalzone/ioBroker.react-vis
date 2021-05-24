@@ -241,7 +241,7 @@ const config: Config = {
 								{
 									widgetType: "radio-button",
 									label: "Zur Ladestation",
-									icon: "GasStation",
+									icon: "Charger",
 									id: "javascript.0.Staubsauger.stop",
 								},
 								{
@@ -408,6 +408,47 @@ const config: Config = {
 										max: 20,
 										step: 0.5,
 									},
+								},
+							],
+						},
+					],
+				},
+			],
+		},
+		{
+			label: "Szenen",
+			icon: "Wand",
+			sections: [
+				{
+					label: "Ausführen",
+					widgets: [
+						{
+							widgetType: "item-list",
+							className: "button-list",
+							items: [
+								{
+									widgetType: "radio-button",
+									label: "Guten Morgen",
+									icon: "Sunrise",
+									id: "scene.0.Tagmodus",
+								},
+								{
+									widgetType: "radio-button",
+									label: "Feierabend",
+									icon: "Sunset",
+									id: "scene.0.Feierabend",
+								},
+								{
+									widgetType: "radio-button",
+									label: "Gute Nacht",
+									icon: "Moon",
+									id: "scene.0.Schlafmodus",
+								},
+								{
+									widgetType: "radio-button",
+									label: "Nachtschicht",
+									icon: "Computer",
+									id: "scene.0.Nachtschicht",
 								},
 							],
 						},

@@ -202,6 +202,31 @@ export const GasStation: React.FC<IconProps> = (props) => {
 	);
 };
 
+export const Charger: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<line x1="18" y1="7" x2="17" y2="8" />
+			<path d="M14 11h1a2 2 0 0 1 2 2v3a1.5 1.5 0 0 0 3 0v-7l-3 -3" />
+			<path d="M4 20v-14a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v14" />
+			<path d="M9 11.5l-1.5 2.5h3l-1.5 2.5" />
+			<line x1="3" y1="20" x2="15" y2="20" />
+			<line x1="4" y1="8" x2="14" y2="8" />
+		</svg>
+	);
+};
+
 export const Play: React.FC<IconProps> = (props) => {
 	const { size, strokeWidth = defaultStrokeWidth } = props;
 	return (
@@ -505,6 +530,116 @@ export const Clock: React.FC<IconProps> = (props) => {
 			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
 			<circle cx="12" cy="12" r="9" />
 			<polyline points="12 7 12 12 15 15" />
+		</svg>
+	);
+};
+
+export const Wand: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<polyline points="6 21 21 6 18 3 3 18 6 21" />
+			<line x1="15" y1="6" x2="18" y2="9" />
+			<path d="M9 3a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
+			<path d="M19 13a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
+		</svg>
+	);
+};
+
+export const Sunrise: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<path d="M3 17h1m16 0h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7m-9.7 5.7a4 4 0 0 1 8 0" />
+			<line x1="3" y1="21" x2="21" y2="21" />
+			<path d="M12 9v-6l3 3m-6 0l3 -3" />
+		</svg>
+	);
+};
+
+export const Sunset: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<path d="M3 17h1m16 0h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7m-9.7 5.7a4 4 0 0 1 8 0" />
+			<line x1="3" y1="21" x2="21" y2="21" />
+			<path d="M12 3v6l3 -3m-6 0l3 3" />
+		</svg>
+	);
+};
+
+export const Moon: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+		</svg>
+	);
+};
+
+export const Computer: React.FC<IconProps> = (props) => {
+	const { size, strokeWidth = defaultStrokeWidth } = props;
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			strokeWidth={strokeWidth}
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+			<rect x="3" y="4" width="18" height="12" rx="1" />
+			<line x1="7" y1="20" x2="17" y2="20" />
+			<line x1="9" y1="16" x2="9" y2="20" />
+			<line x1="15" y1="16" x2="15" y2="20" />
 		</svg>
 	);
 };
