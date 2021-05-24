@@ -29,7 +29,7 @@ const Root: React.FC = () => {
 			<div className="content-wrapper">
 				<aside>
 					<Clock />
-					<Weather days={config.weather.days} />
+					<Weather now={config.weather.now} days={config.weather.days} />
 					<h2>Meldungen</h2>
 					<p>hier gibts noch nichts zu sehen!</p>
 					<Navigation items={config.pages} onSelectItem={setCurrentPageName} />

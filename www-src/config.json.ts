@@ -2,37 +2,43 @@ import { Config } from "./lib/config";
 
 const config: Config = {
 	weather: {
+		now: {
+			label: "jetzt",
+			iconId: "daswetter.0.NextHours.Location_1.Day_1.current.iconURL",
+			iconTooltipId: "daswetter.0.NextHours.Location_1.Day_1.current.symbol_desc",
+			temperatureId: "daswetter.0.NextHours.Location_1.Day_1.current.temp_value",
+		},
 		days: [
 			{
 				label: "heute",
-				iconId: "daswetter.0.NextDaysDetailed.Location_1.Day_1.iconURL",
-				iconTooltipId: "daswetter.0.NextDaysDetailed.Location_1.Day_1.symbol_desc",
-				temperatureIds: [
-					"daswetter.0.NextDaysDetailed.Location_1.Day_1.tempmin_value",
-					"daswetter.0.NextDaysDetailed.Location_1.Day_1.tempmax_value",
+				iconId: "daswetter.0.NextHours.Location_1.Day_1.iconURL",
+				iconTooltipId: "daswetter.0.NextHours.Location_1.Day_1.symbol_desc",
+				tempRangeIds: [
+					"daswetter.0.NextHours.Location_1.Day_1.tempmin_value",
+					"daswetter.0.NextHours.Location_1.Day_1.tempmax_value",
 				],
-				humidityId: "daswetter.0.NextDaysDetailed.Location_1.Day_1.humidity_value",
+				humidityId: "daswetter.0.NextHours.Location_1.Day_1.humidity_value",
 			},
 			{
 				label: "morgen",
 				iconId: "daswetter.0.NextDaysDetailed.Location_1.Day_2.iconURL",
 				iconTooltipId: "daswetter.0.NextDaysDetailed.Location_1.Day_2.symbol_desc",
-				temperatureIds: [
+				tempRangeIds: [
 					"daswetter.0.NextDaysDetailed.Location_1.Day_2.tempmin_value",
 					"daswetter.0.NextDaysDetailed.Location_1.Day_2.tempmax_value",
 				],
 				humidityId: "daswetter.0.NextDaysDetailed.Location_1.Day_2.humidity_value",
 			},
-			{
-				label: "überm.",
-				iconId: "daswetter.0.NextDaysDetailed.Location_1.Day_3.iconURL",
-				iconTooltipId: "daswetter.0.NextDaysDetailed.Location_1.Day_3.symbol_desc",
-				temperatureIds: [
-					"daswetter.0.NextDaysDetailed.Location_1.Day_3.tempmin_value",
-					"daswetter.0.NextDaysDetailed.Location_1.Day_3.tempmax_value",
-				],
-				humidityId: "daswetter.0.NextDaysDetailed.Location_1.Day_3.humidity_value",
-			},
+			// {
+			// 	label: "überm.",
+			// 	iconId: "daswetter.0.NextDaysDetailed.Location_1.Day_3.iconURL",
+			// 	iconTooltipId: "daswetter.0.NextDaysDetailed.Location_1.Day_3.symbol_desc",
+			// 	tempRangeIds: [
+			// 		"daswetter.0.NextDaysDetailed.Location_1.Day_3.tempmin_value",
+			// 		"daswetter.0.NextDaysDetailed.Location_1.Day_3.tempmax_value",
+			// 	],
+			// 	humidityId: "daswetter.0.NextDaysDetailed.Location_1.Day_3.humidity_value",
+			// },
 		],
 	},
 	pages: [

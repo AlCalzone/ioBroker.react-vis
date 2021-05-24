@@ -8,14 +8,43 @@
 	margin-bottom: 1rem;
 }
 
-.weather-day {
+.weather-now {
 	text-align: center;
-	flex: 0 0 32%;
-	max-width: 32%;
+	// align-self: center;
+	flex: 0 0 40%;
+	max-width: 40%;
+
+	.temperature {
+		font-weight: bold;
+		font-size: var(--font-size-large);
+	}
 
 	div,
 	b {
 		display: block;
+	}
+
+	div {
+		line-height: 0.5;
+	}
+
+	img {
+		max-width: 100%;
+	}
+}
+
+.weather-day {
+	text-align: center;
+	flex: 0 0 30%;
+	max-width: 30%;
+
+	div,
+	b {
+		display: block;
+	}
+
+	div {
+		line-height: 1.2;
 	}
 
 	img {

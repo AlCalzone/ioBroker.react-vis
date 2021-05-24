@@ -9,13 +9,21 @@ export interface Config {
 }
 
 export interface Weather {
+	now: WeatherNow;
 	days: WeatherDay[];
+}
+
+export interface WeatherNow {
+	iconId: string;
+	iconTooltipId: string;
+	temperatureId: string;
+	label: string;
 }
 
 export interface WeatherDay {
 	iconId: string;
 	iconTooltipId: string;
-	temperatureIds: [min: string, max: string];
+	tempRangeIds: [min: string, max: string];
 	humidityId: string;
 	label: string;
 }
