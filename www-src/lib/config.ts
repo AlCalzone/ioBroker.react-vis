@@ -5,6 +5,19 @@ export type Icon = Exclude<keyof typeof import("../components/icons"), "Loader">
 
 export interface Config {
 	pages: Page[];
+	weather: Weather;
+}
+
+export interface Weather {
+	days: WeatherDay[];
+}
+
+export interface WeatherDay {
+	iconId: string;
+	iconTooltipId: string;
+	temperatureIds: [min: string, max: string];
+	humidityId: string;
+	label: string;
 }
 
 export interface Page {

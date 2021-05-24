@@ -3,6 +3,7 @@ import * as ReactDOM from "react-dom";
 import { Clock } from "./components/clock";
 import { Navigation } from "./components/navigation";
 import { Page } from "./components/page";
+import { Weather } from "./components/weather";
 // import { getObjectAsync } from "./lib/backend";
 // import { useIoBrokerObject } from "./lib/useIoBrokerObject";
 import config from "./config.json";
@@ -28,7 +29,7 @@ const Root: React.FC = () => {
 			<div className="content-wrapper">
 				<aside>
 					<Clock />
-					<p>hier kommt mal das Wetter hin!</p>
+					<Weather days={config.weather.days} />
 					<h2>Meldungen</h2>
 					<p>hier gibts noch nichts zu sehen!</p>
 					<Navigation items={config.pages} onSelectItem={setCurrentPageName} />

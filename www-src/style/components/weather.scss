@@ -1,0 +1,24 @@
+@import "../includes/variables.scss";
+@import "../includes/mixins.scss";
+
+.weather {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+}
+
+.weather-day {
+	text-align: center;
+	flex: 0 0 32%;
+	max-width: 32%;
+
+	div,
+	b {
+		display: block;
+	}
+
+	img {
+		max-width: 100%;
+	}
+}
