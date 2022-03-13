@@ -5,9 +5,9 @@ import { Clock } from "./components/clock";
 import { Navigation } from "./components/navigation";
 import { Page } from "./components/page";
 import { Weather } from "./components/weather";
+import config from "./config.json";
 // import { getObjectAsync } from "./lib/backend";
 // import { useIoBrokerObject } from "./lib/useIoBrokerObject";
-import config from "./config.json";
 
 // TODO: Detect from the URL
 // const namespace = "react-vis.0";

@@ -1,8 +1,11 @@
 <html>
 	<head>
 		<title>Smart Home</title>
-		<!-- connection to the backend -->
+
+		<link rel="stylesheet" href="./style/style.scss" />
+
 		<script>
+			// Fix the socket connection in the dev server
 			var socketUrl;
 			socketUrl = socketUrl || "https://heizung.fritz.box:8082/socket.io/socket.io.js";
 		</script>
@@ -12,6 +15,4 @@
 		<div id="app"></div>
 		<script type="module" src="./index.tsx"></script>
 	</body>
-
-	<link rel="stylesheet" href="./style/style.scss" />
 </html>
