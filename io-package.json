@@ -65,7 +65,8 @@
 				"js-controller": ">=2.0.0",
 				"web": ">=2.0.0"
 			}
-		]
+		],
+		"eraseOnUpload": true
 	},
 	"native": {},
 	"objects": [],
