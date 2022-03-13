@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Page } from "../lib/config";
+import type { Page } from "../lib/config";
 import { IconButton } from "./iconButton";
 import { IconOrIndicator } from "./iconOrIndicator";
 

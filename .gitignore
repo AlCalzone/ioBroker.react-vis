@@ -2,7 +2,7 @@
 .idea
 node_modules
 nbproject
-.cache
+.parcel-cache
 
 # Sourcemaps
 maps/

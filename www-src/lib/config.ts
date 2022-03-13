@@ -1,4 +1,4 @@
-import { IconButtonProps } from "../components/iconButton";
+import type { IconButtonProps } from "../components/iconButton";
 
 /* eslint-disable @typescript-eslint/no-namespace */
 export type Icon = Exclude<keyof typeof import("../components/icons"), "Loader">;

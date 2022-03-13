@@ -1,5 +1,6 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import { IoBrokerApp } from "iobroker-react/app";
+import React from "react";
+import ReactDOM from "react-dom";
 import { Clock } from "./components/clock";
 import { Navigation } from "./components/navigation";
 import { Page } from "./components/page";
@@ -11,7 +12,7 @@ import config from "./config.json";
 // TODO: Detect from the URL
 // const namespace = "react-vis.0";
 
-const Root: React.FC = () => {
+const Root: React.FC = React.memo(() => {
 	const [currentPageName, setCurrentPageName] = React.useState<string | undefined>("Licht & Rollos");
 	const clearCurrentPageName = () => setCurrentPageName(undefined);
 
@@ -49,24 +50,11 @@ const Root: React.FC = () => {
 	) : (
 		<span>loading...</span>
 	);
-};
+});
 
-const App: React.FC = () => {
-	// Manage socket connection and only display the Root component when a socket is available
-	const [socketLoaded, setSocketLoaded] = React.useState<boolean>(!!window.socket);
-	React.useEffect(() => {
-		const timeout = setInterval(() => {
-			if (!!window.socket) {
-				clearTimeout(timeout);
-				setSocketLoaded(true);
-			}
-		}, 250);
-		(window as any).onSocketLoaded = () => {
-			setSocketLoaded(true);
-		};
-		return () => clearTimeout(timeout);
-	}, []);
-	return socketLoaded ? <Root /> : <span>loading...</span>;
-};
-
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(
+	<IoBrokerApp name="react-vis">
+		<Root />
+	</IoBrokerApp>,
+	document.getElementById("app"),
+);

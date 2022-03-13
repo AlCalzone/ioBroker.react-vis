@@ -1,8 +1,7 @@
+import { useIoBrokerObject, useIoBrokerState } from "iobroker-react/hooks";
 import * as React from "react";
 import { renderWidget } from ".";
 import type { Widgets as WidgetTypes } from "../lib/config";
-import { useIoBrokerObject } from "../lib/useIoBrokerObject";
-import { useIoBrokerState } from "../lib/useIoBrokerState";
 
 export type IfProps = Omit<WidgetTypes.If, "type">;
 
@@ -10,7 +9,7 @@ const If: React.FC<IfProps> = (props) => {
 	const [value] = useIoBrokerState({
 		id: props.id,
 	});
-	const [object] = useIoBrokerObject({ id: props.id, subscribe: false });
+	const [object] = useIoBrokerObject(props.id, { subscribe: false });
 
 	if (value != undefined && object != undefined) {
 		let visible: boolean;

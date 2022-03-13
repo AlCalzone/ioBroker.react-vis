@@ -1,6 +1,6 @@
 import * as React from "react";
+import type { IconProps } from "./icons";
 import * as icons from "./icons";
-import { IconProps } from "./icons";
 
 export interface IconOrIndicatorProps extends IconProps {
 	icon: Exclude<keyof typeof icons, "Loader">;

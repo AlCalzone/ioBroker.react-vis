@@ -1,8 +1,7 @@
+import { useIoBrokerObject, useIoBrokerState } from "iobroker-react/hooks";
 import * as React from "react";
 import { Thermostat as ThermostatComponent } from "../components/thermostat";
 import type { Widgets as WidgetTypes } from "../lib/config";
-import { useIoBrokerObject } from "../lib/useIoBrokerObject";
-import { useIoBrokerState } from "../lib/useIoBrokerState";
 
 export type ThermostatProps = Omit<WidgetTypes.Thermostat, "type">;
 
@@ -10,7 +9,7 @@ const Thermostat: React.FC<ThermostatProps> = (props) => {
 	const [value, ack, setValue] = useIoBrokerState<number>({
 		id: props.id,
 	});
-	const [object] = useIoBrokerObject({ id: props.id, subscribe: false });
+	const [object] = useIoBrokerObject(props.id, { subscribe: false });
 
 	if (value !== undefined && object != undefined) {
 		return (
