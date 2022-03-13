@@ -1,9 +1,8 @@
+import { useIoBrokerObject, useIoBrokerState } from "iobroker-react/hooks";
 import * as React from "react";
 import { IconButton } from "../components/iconButton";
 import { IconOrIndicator } from "../components/iconOrIndicator";
 import type { Widgets as WidgetTypes } from "../lib/config";
-import { useIoBrokerObject } from "../lib/useIoBrokerObject";
-import { useIoBrokerState } from "../lib/useIoBrokerState";
 
 export type RadioButtonProps = Omit<WidgetTypes.RadioButton, "type">;
 
@@ -12,7 +11,7 @@ const RadioButton: React.FC<RadioButtonProps> = (props) => {
 		id: props.id,
 		writeId: props.writeId,
 	});
-	const [object] = useIoBrokerObject({ id: props.id, subscribe: false });
+	const [object] = useIoBrokerObject(props.id, { subscribe: false });
 
 	if (value != undefined && object != undefined) {
 		const currentIcon = typeof props.icon === "string" ? props.icon : !!value ? props.icon.true : props.icon.false;

@@ -1,17 +1,18 @@
+import { useIoBrokerState } from "iobroker-react/hooks";
 import * as React from "react";
-import { WeatherDay as WeatherDayConfig, WeatherNow as WeatherNowConfig } from "../lib/config";
-import { useIoBrokerState } from "../lib/useIoBrokerState";
+import type { WeatherDay as WeatherDayConfig, WeatherNow as WeatherNowConfig } from "../lib/config";
 
 export interface WeatherNowProps extends WeatherNowConfig {
 	// label: string;
 }
 
+const baseUrl =
+	location.href.includes("localhost:") && (window as any).socketUrl ? new URL((window as any).socketUrl).origin : "";
+
 export const WeatherNow: React.FC<WeatherNowProps> = ({ iconId, iconTooltipId, temperatureId, label, ..._props }) => {
 	const [iconURL] = useIoBrokerState<string>({ id: iconId });
 	const [tooltip] = useIoBrokerState<string>({ id: iconTooltipId });
 	const [temperature] = useIoBrokerState<number>({ id: temperatureId });
-
-	const baseUrl = location.href.includes("localhost:") ? "http://localhost:9999" : "";
 
 	return (
 		<div className={`weather-now`}>
@@ -39,8 +40,6 @@ export const WeatherDay: React.FC<WeatherDayProps> = ({
 	const [tempMin] = useIoBrokerState<number>({ id: tempRangeIds[0] });
 	const [tempMax] = useIoBrokerState<number>({ id: tempRangeIds[1] });
 	const [humidity] = useIoBrokerState<number>({ id: humidityId });
-
-	const baseUrl = location.href.includes("localhost:") ? "http://localhost:9999" : "";
 
 	return (
 		<div className={`weather-day`}>

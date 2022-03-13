@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Section } from "../lib/config";
+import type { Section } from "../lib/config";
 import { renderWidget } from "../widgets";
 import { Dialog, DialogProps } from "./dialog";
 

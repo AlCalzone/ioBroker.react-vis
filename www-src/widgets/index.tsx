@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Widget } from "../lib/config";
+import type { Widget } from "../lib/config";
 import button from "./button";
 import _if from "./if";
 import itemList from "./item-list";

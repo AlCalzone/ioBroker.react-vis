@@ -1,43 +1,38 @@
-// Root tsconfig to set the settings and power editor support for all TS files
 {
-	"compileOnSave": true,
+	// To update the compilation target, install a different version of @tsconfig/node... and reference it here
+	// https://github.com/tsconfig/bases#node-14-tsconfigjson
+	"extends": "@tsconfig/node14/tsconfig.json",
 	"compilerOptions": {
 		// do not compile anything, this file is just to configure type checking
 		// the compilation is configured in tsconfig.build.json
 		"noEmit": true,
+		// Never emit faulty JS
+		"noEmitOnError": true,
+
 		// check JS files, but do not compile them => tsconfig.build.json
 		"allowJs": true,
 		"checkJs": true,
-		"skipLibCheck": true, // Don't report errors in 3rd party definitions
-		"noEmitOnError": true,
+
 		"outDir": "./build/",
 		"removeComments": false,
-		"module": "commonjs",
-		"moduleResolution": "node",
-		// this is necessary for the automatic typing of the adapter config
-		"resolveJsonModule": true,
-		// Support React
+
 		"jsx": "react",
-		// Set this to false if you want to disable the very strict rules (not recommended)
-		"strict": true,
-		// Or enable some of those features for more fine-grained control
-		// "strictNullChecks": true,
-		// "strictPropertyInitialization": true,
-		// "strictBindCallApply": true,
-		// "noImplicitAny": true,
-		// "noUnusedLocals": true,
-		// "noUnusedParameters": true,
-		// Consider targetting es2017 or higher if you require the new NodeJS 8+ features
-		"target": "es2018",
+
+		// Avoid runtime imports that are unnecessary
+		"importsNotUsedAsValues": "error",
+
+		// Required for TS debugging
 		"sourceMap": true,
 		"inlineSourceMap": false,
+
+		// watch=true breaks CI build steps
 		"watch": false,
-		/* Advanced Options */
-		"forceConsistentCasingInFileNames": true, /* Disallow inconsistently-cased references to the same file. */
+
+		"module": "CommonJS"
 	},
 	"include": [
 		"**/*.ts",
-		"**/*.tsx",
+		"**/*.d.ts"
 	],
 	"exclude": [
 		"build/**",

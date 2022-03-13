@@ -1,4 +1,4 @@
-import { Config } from "./lib/config";
+import type { Config } from "./lib/config";
 
 const config: Config = {
 	weather: {
@@ -64,22 +64,19 @@ const config: Config = {
 									widgetType: "toggle-button",
 									label: "Küche",
 									icon: { false: "BulbOff", true: "BulbOn" },
-									id: "zwave2.0.Node_005.Binary_Switch.currentValue_001",
-									writeId: "zwave2.0.Node_005.Binary_Switch.targetValue_001",
+									id: "alias.0.Z-Wave.Küche",
 								},
 								{
 									widgetType: "toggle-button",
 									label: "Bad",
 									icon: { false: "BulbOff", true: "BulbOn" },
-									id: "zwave2.0.Node_007.Binary_Switch.currentValue_001",
-									writeId: "zwave2.0.Node_007.Binary_Switch.targetValue_001",
+									id: "alias.0.Z-Wave.Bad",
 								},
 								{
 									widgetType: "toggle-button",
 									label: "Schlaf\u00ADzimmer",
 									icon: { false: "BulbOff", true: "BulbOn" },
-									id: "zwave2.0.Node_006.Binary_Switch.currentValue_001",
-									writeId: "zwave2.0.Node_006.Binary_Switch.targetValue_001",
+									id: "alias.0.Z-Wave.Rollo_Schlafzimmer",
 								},
 								{
 									widgetType: "toggle-button",
@@ -91,22 +88,19 @@ const config: Config = {
 									widgetType: "toggle-button",
 									label: "Abstell\u00ADkammer",
 									icon: { false: "BulbOff", true: "BulbOn" },
-									id: "zwave2.0.Node_008.Binary_Switch.currentValue_001",
-									writeId: "zwave2.0.Node_008.Binary_Switch.targetValue_001",
+									id: "alias.0.Z-Wave.Abstellkammer",
 								},
 								{
 									widgetType: "toggle-button",
 									label: "Schreibtisch Caro",
 									icon: { false: "BulbOff", true: "BulbOn" },
-									id: "zwave2.0.Node_004.Multilevel_Switch.currentValue_001",
-									writeId: "zwave2.0.Node_004.Multilevel_Switch.targetValue_001",
+									id: "alias.0.Z-Wave.Schreibtisch_Caro",
 								},
 								{
 									widgetType: "toggle-button",
 									label: "Schreibtisch Domi",
 									icon: { false: "BulbOff", true: "BulbOn" },
-									id: "zwave2.0.Node_002.Multilevel_Switch.currentValue_001",
-									writeId: "zwave2.0.Node_002.Multilevel_Switch.targetValue_001",
+									id: "alias.0.Z-Wave.Schreibtisch_Domi",
 								},
 								{
 									widgetType: "toggle-button",
@@ -124,7 +118,7 @@ const config: Config = {
 									widgetType: "toggle-button",
 									label: "Strahler Schreibtisch",
 									icon: { false: "BulbOff", true: "BulbOn" },
-									id: "tradfri.0.L-65538.lightbulb.state",
+									id: "tradfri.0.L-65542.lightbulb.state",
 								},
 								{
 									widgetType: "toggle-button",
@@ -145,14 +139,12 @@ const config: Config = {
 								{
 									widgetType: "slider",
 									label: "Schreib\u00ADtisch Caro",
-									id: "zwave2.0.Node_004.Multilevel_Switch.currentValue_001",
-									writeId: "zwave2.0.Node_004.Multilevel_Switch.targetValue_001",
+									id: "alias.0.Z-Wave.Schreibtisch_Caro",
 								},
 								{
 									widgetType: "slider",
 									label: "Schreib\u00ADtisch Domi",
-									id: "zwave2.0.Node_002.Multilevel_Switch.currentValue_001",
-									writeId: "zwave2.0.Node_002.Multilevel_Switch.targetValue_001",
+									id: "alias.0.Z-Wave.Schreibtisch_Domi",
 								},
 								{
 									widgetType: "slider",
@@ -162,7 +154,7 @@ const config: Config = {
 								{
 									widgetType: "slider",
 									label: "Strahler Schreib\u00ADtisch",
-									id: "tradfri.0.L-65538.lightbulb.brightness",
+									id: "tradfri.0.L-65542.lightbulb.brightness",
 								},
 								{
 									widgetType: "slider",
@@ -187,26 +179,22 @@ const config: Config = {
 								{
 									widgetType: "slider",
 									label: "Schlafzimmer",
-									id: "zwave2.0.Node_014.Multilevel_Switch.currentValue",
-									writeId: "zwave2.0.Node_014.Multilevel_Switch.targetValue",
+									id: "alias.0.Z-Wave.Rollo_Schlafzimmer",
 								},
 								{
 									widgetType: "slider",
 									label: "Balkon",
-									id: "zwave2.0.Node_011.Multilevel_Switch.currentValue",
-									writeId: "zwave2.0.Node_011.Multilevel_Switch.targetValue",
+									id: "alias.0.Z-Wave.Rollo_Balkon",
 								},
 								{
 									widgetType: "slider",
 									label: "Wohnzimmer links",
-									id: "zwave2.0.Node_012.Multilevel_Switch.currentValue",
-									writeId: "zwave2.0.Node_012.Multilevel_Switch.targetValue",
+									id: "alias.0.Z-Wave.Rollo_Wohnzimmer_Links",
 								},
 								{
 									widgetType: "slider",
 									label: "Wohnzimmer rechts",
-									id: "zwave2.0.Node_013.Multilevel_Switch.currentValue",
-									writeId: "zwave2.0.Node_013.Multilevel_Switch.targetValue",
+									id: "alias.0.Z-Wave.Rollo_Wohnzimmer_Rechts",
 								},
 							],
 						},
@@ -430,25 +418,25 @@ const config: Config = {
 									widgetType: "radio-button",
 									label: "Guten Morgen",
 									icon: "Sunrise",
-									id: "scene.0.Tagmodus",
+									id: "javascript.0.Licht.Szene.Tagmodus",
 								},
 								{
 									widgetType: "radio-button",
 									label: "Feierabend",
 									icon: "Sunset",
-									id: "scene.0.Feierabend",
+									id: "javascript.0.Licht.Szene.Feierabend",
 								},
 								{
 									widgetType: "radio-button",
 									label: "Gute Nacht",
 									icon: "Moon",
-									id: "scene.0.Schlafmodus",
+									id: "javascript.0.Licht.Szene.Nachtmodus",
 								},
 								{
 									widgetType: "radio-button",
 									label: "Nachtschicht",
 									icon: "Computer",
-									id: "scene.0.Nachtschicht",
+									id: "javascript.0.Licht.Szene.Nachtschicht",
 								},
 							],
 						},

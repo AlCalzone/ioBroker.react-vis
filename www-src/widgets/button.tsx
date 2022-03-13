@@ -1,8 +1,8 @@
+import { useIoBrokerState } from "iobroker-react/hooks";
 import * as React from "react";
 import { IconButton } from "../components/iconButton";
 import { IconOrIndicator } from "../components/iconOrIndicator";
 import type { Widgets as WidgetTypes } from "../lib/config";
-import { useIoBrokerState } from "../lib/useIoBrokerState";
 
 export type ButtonProps = Omit<WidgetTypes.Button, "type">;
 

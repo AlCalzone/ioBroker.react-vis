@@ -1,1 +1,20 @@
-<html><head><title>Smart Home</title><link rel="stylesheet" href="/react-vis/style.2107b110.css"><script>var n=function(n){console.log(n);var o=document.createElement("p");o.innerHTML=n,document.getElementById("log").appendChild(o)},o="1234"===location.port?"https://heizung.fritz.box:8082":"https://".concat(location.host),e="".concat(o,"/lib/js/socket.io.js"),t=document.createElement("script");t.onload=function(){window.socket=io(o).on("connect",function(){var o,e;n("connect"),null===(o=(e=window).onSocketLoaded)||void 0===o||o.call(e)});for(var e=function(){var o=c[t];window.socket.on(o,function(){for(var e=arguments.length,t=new Array(e),c=0;c<e;c++)t[c]=arguments[c];n("".concat(o,": ").concat(JSON.stringify(t)))})},t=0,c=["error","connect_error","disconnect","connect_timeout","reconnect","reconnect_failed","reconnect_error"];t<c.length;t++)e();window.socket.open()},t.onerror=function(n){console.error(JSON.stringify(n))},t.src=e,document.head.appendChild(t);</script></head><body> <div id="app"></div>  <script type="text/javascript" src="/react-vis/www-src.b7429748.js"></script> <div id="log" style="color:red;position:absolute;bottom:0;right:0;z-index:1000;background:#fff;line-height:1;"></div> </body></html>
+<html>
+	<head>
+		<title>Smart Home</title>
+		<!-- connection to the backend -->
+		<script>
+			var socketUrl;
+			socketUrl = socketUrl || "https://heizung.fritz.box:8082/socket.io/socket.io.js";
+		</script>
+		<script type="module" crossorigin src="/assets/index.4cbad9cc.js"></script>
+		<link rel="modulepreload" href="/assets/vendor.28fe6b5b.js">
+		<link rel="stylesheet" href="/assets/index.09a44b6b.css">
+	</head>
+
+	<body>
+		<div id="app"></div>
+		
+	</body>
+
+	
+</html>
