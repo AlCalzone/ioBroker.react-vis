@@ -35,7 +35,6 @@
     "@types/react-dom": "^17.0.13",
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
-    "cross-env": "^7.0.3",
     "date-fns": "^2.28.0",
     "eslint": "^8.11.0",
     "eslint-config-prettier": "^8.5.0",
@@ -45,6 +44,7 @@
     "prettier-plugin-organize-imports": "^2.3.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rimraf": "^3.0.2",
     "source-map-support": "^0.5.21",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.2",
@@ -52,6 +52,7 @@
   },
   "scripts": {
     "dev": "vite",
+    "prebuild": "rimraf www/",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .ts src"
