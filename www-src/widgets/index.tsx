@@ -2,6 +2,7 @@ import * as React from "react";
 import type { Widget } from "../lib/config";
 import button from "./button";
 import _if from "./if";
+import image from "./image";
 import itemList from "./item-list";
 import radioButton from "./radio-button";
 import slider from "./slider";
@@ -16,6 +17,7 @@ const index = {
 	slider: slider,
 	thermostat: thermostat,
 	if: _if,
+	image: image,
 };
 
 export default index;

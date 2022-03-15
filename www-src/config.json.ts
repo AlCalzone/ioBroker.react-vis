@@ -296,6 +296,15 @@ const config: Config = {
 					],
 				},
 				{
+					label: "Karte",
+					widgets: [
+						{
+							widgetType: "image",
+							id: "mihome-vacuum.0.cleanmap.map64",
+						},
+					],
+				},
+				{
 					label: "Feintuning",
 					widgets: [
 						{

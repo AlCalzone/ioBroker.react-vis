@@ -1,0 +1,6 @@
+@import "../includes/variables.scss";
+
+main img {
+	max-width: 100%;
+	background-color: var(--color-bg_alpha_stacked);
+}

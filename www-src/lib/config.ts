@@ -43,6 +43,7 @@ export type Widget =
 	| Widgets.If
 	| Widgets.ToggleButton
 	| Widgets.ItemList
+	| Widgets.Image
 	| Widgets.Slider
 	| Widgets.Button
 	| Widgets.RadioButton
@@ -114,5 +115,10 @@ export namespace Widgets {
 		id: string;
 		value?: any;
 		child: Widget;
+	}
+
+	export interface Image {
+		widgetType: "image";
+		id: string;
 	}
 }
